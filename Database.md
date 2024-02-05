@@ -18,7 +18,6 @@
 |updated_at|TIMESTAMP|NULL|La date de la dernière mise a jour|
 |deleted_at|TIMESTAMP|NULL|La date de la dernière mise a jour|
 
-
 ### Table User (user)
 
 |Champ|Type|Spécificités|Description|
@@ -44,3 +43,4 @@
 | date       | DATE         | NOT_NULL                                                     | La date du commentaire        |
 | created_at | TIMESTAMP   | DEFAULT_CURRENT_TIMESTAMP                                    | La date de création           |
 | deleted_at | TIMESTAMP   | NULL                                                         | La date de suppression       |
+| user_id       | ENTITY      | NULL                                                         |L'utilisateur qui a posté le commentaire|
