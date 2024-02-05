@@ -43,4 +43,4 @@
 | date       | DATE         | NOT_NULL                                                     | La date du commentaire        |
 | created_at | TIMESTAMP   | DEFAULT_CURRENT_TIMESTAMP                                    | La date de création           |
 | deleted_at | TIMESTAMP   | NULL                                                         | La date de suppression       |
-| user_id       | ENTITY      | NULL                                                         |L'utilisateur qui a posté le commentaire|
+| user       | ENTITY      | NULL                                                         |L'utilisateur qui a posté le commentaire|
