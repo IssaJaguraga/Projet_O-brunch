@@ -11,6 +11,7 @@
 |price|TINYINT(1))|NOT_NULL, DEFAULT 0|Le niveau de tarification du restaurant|
 |rate|TINYINT(1)|NOT_NULL, DEFAULT 0|L'avis des utilisateurs sur le produit (valeur de 1 a 5)|
 |adress| VARCHAR(128)|NOT_NULL|L'adresse du restaurant|
+|town| VARCHAR(64) | NOT NULL |Ville du restaurant|
 |country| VARCHAR(64) | NOT NULL|Pays|
 |continent| VARCHAR(64) | NOT NULL|Continent|
 |created_at|TIMESTAMP|DEFAULT_CURRENT_TIMESTAMP|La date de création|
