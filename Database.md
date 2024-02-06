@@ -32,8 +32,6 @@
 |created_at|TIMESTAMP|DEFAULT_CURRENT_TIMESTAMP |La date de création|
 |updated_at|TIMESTAMP |NULL |La date de modification|
 |deleted_at|TIMESTAMP |NULL |La date de suppression|
-|restaurant| ENTITY | NULL| Le restaurant favori de l'user|
-
 
 ### Table Commentaires (comments)
 
