@@ -80,7 +80,7 @@
 |deleted_at|TIMESTAMP |NULL |La date de suppression|
 |country| ENTITY | NOT_NULL| Le pays de la ville |
 
-### Table Town (town)
+### Table User_Restaurant (User_Restaurant)
 
 |Champ|Type|Spécificités|Description|
 |-|-|-|-|
