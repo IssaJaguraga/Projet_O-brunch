@@ -79,3 +79,12 @@
 |updated_at|TIMESTAMP |NULL |La date de modification|
 |deleted_at|TIMESTAMP |NULL |La date de suppression|
 |country| ENTITY | NOT_NULL| Le pays de la ville |
+
+### Table Town (town)
+
+|Champ|Type|Spécificités|Description|
+|-|-|-|-|
+| restaurant| ENTITY | PRIMARY_KEY, NOT_NULL| Le restaurant favori de l'user|
+| user | ENTITY | PRIMARY_KEY, NOT_NULL |L'user qui a écrit le commentaire|
+
+
