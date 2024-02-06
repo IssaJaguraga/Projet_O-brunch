@@ -16,6 +16,7 @@
 |updated_at|TIMESTAMP|NULL|La date de la dernière mise a jour|
 |deleted_at|TIMESTAMP|NULL|La date de la dernière mise a jour|
 |comments|ENTITY| NULL| Le commentaire rattaché à un restaurant |
+|town| ENTITY | NOT_NULL| La ville du restaurant |
 
 ### Table User (user)
 
@@ -43,7 +44,9 @@
 | date | DATE | NOT_NULL| La date du commentaire |
 | created_at| TIMESTAMP | DEFAULT_CURRENT_TIMESTAMP | La date de création |
 | deleted_at| TIMESTAMP | NULL | La date de suppression |
-| user | ENTITY | NULL |L'utilisateur qui a posté le commentaire|
+| user | ENTITY | NOT_NULL |L'utilisateur qui a posté le commentaire|
+|restaurant| ENTITY | NOT_NULL| Le commentaire écrit par un user |
+
 
 ### Table Continent (continent)
 
@@ -64,6 +67,7 @@
 |created_at|TIMESTAMP|DEFAULT_CURRENT_TIMESTAMP |La date de création|
 |updated_at|TIMESTAMP |NULL |La date de modification|
 |deleted_at|TIMESTAMP |NULL |La date de suppression|
+|continent| ENTITY | NOT_NULL |Le continent du pays|
 
 ### Table Town (town)
 
@@ -74,4 +78,4 @@
 |created_at|TIMESTAMP|DEFAULT_CURRENT_TIMESTAMP |La date de création|
 |updated_at|TIMESTAMP |NULL |La date de modification|
 |deleted_at|TIMESTAMP |NULL |La date de suppression|
-|restaurant| ENTITY | NULL| Le restaurant localisé dans la ville|
+|country| ENTITY | NOT_NULL| Le pays de la ville |
