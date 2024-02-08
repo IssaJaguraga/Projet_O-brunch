@@ -1,6 +1,10 @@
+@use "../utils/variables" as *;
+@use "../utils/mixins";
+
 /* -- Styles généraux --  */
 body {
-    font-family: "Open Sans", sans-serif;
-    min-height: 100vh;
-  
-  }
+  font-family: "Open Sans", sans-serif;
+  max-width: 90%;
+  margin: auto;
+ 
+}
