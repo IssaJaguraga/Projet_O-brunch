@@ -1,0 +1,8 @@
+// 1 - Base
+@use "base/normalize";
+@use "base/base";
+@use "base/fonts";
+
+// 2 - Layout
+@use "layout/header";
+@use "layout/footer";
