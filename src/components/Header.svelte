@@ -9,7 +9,7 @@
     </nav>
 
 <div class="connexionSection">
-    <img class="connexionIcon" src="/public/images/icone_connexion.jpg" alt="logo" />
+    <img class="connexionIcon" src="/public/icons/UserIcon.png" alt="logo" />
     <p>CONNEXION</p>
 </div>
 
