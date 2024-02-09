@@ -1,4 +1,3 @@
-import "./app.scss";
 import "./style/main.scss";
 import App from "./App.svelte";
 
