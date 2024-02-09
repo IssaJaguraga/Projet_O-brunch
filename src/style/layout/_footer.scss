@@ -3,21 +3,30 @@
 
 footer {
 
-    background-color: $primary;
-    color: white;
-    height: 50px;
+  background-color: $primary;
+  color: white;
+  height: 130px;
+  padding-top: 20px;
+  text-decoration: none;
 
-    & .footerPages {
 
-       
-          display: inline-block;
-          flex-direction: row;
-          list-style-type: none;
-          align-items: center;
-  
-      }
-  }
+  & .footerPages {
+
+
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    align-items: center;
     
+  
+  }
+
+  & p {
+
+    margin-left: 75em;
+    margin-top: 1em;
+  }
+}
 
 
 @include mixins.tablet {
