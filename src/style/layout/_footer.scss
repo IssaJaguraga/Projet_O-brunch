@@ -1,43 +1,37 @@
 @use "../utils/variables" as *;
 @use "../utils/mixins";
 
+/* -- Header -- */
 footer {
 
   background-color: $primary;
-  color: white;
-  height: 130px;
-  padding-top: 20px;
-  text-decoration: none;
+  width: 100%;
+  color: $white-color;
 
+  & li {
 
-  & .footerPages {
-
-
-    display: flex;
-    flex-direction: column;
     list-style-type: none;
-    align-items: center;
-    
-  
+
   }
+
+
+  & .footer-menu__link {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    font-size: 20px;
+    transition: transform .2s;
+  }
+
+    & .footer-menu__link:hover {
+      transform: scale(1.1);
+    }
 
   & p {
+    margin-left: 50px;
 
-    margin-left: 75em;
-    margin-top: 3em;
-  }
-}
-
-
-@include mixins.tablet {
-  footer {
-    font-size: 14px;
-  }
-}
-
-@include mixins.desktop {
-  footer {
-    font-size: 16px;
-    margin-top: 0;
   }
 }
