@@ -1,4 +1,6 @@
-
+<script>
+ 
+</script>
 <main>
 
 <h1>Les meuilleurs brunch de Dubaï</h1>
@@ -12,6 +14,11 @@
    <article class="theme-card">
 
      <div class="theme-card__informations">
+      <ul>
+        <li>
+          <img src="/images/Dubai/Brunch Dubai 1.jpg" alt="" /><span></span>
+        </li>
+      </ul>
         <span>restaurant Nara</span>
      </div>
      <a
@@ -20,58 +27,72 @@
        aria-label="Accéder à l'espace restaurant">Voir le restaurant 1</a>
    </article>
 
- 
    <article class="theme-card">
-     <div class="theme-card__informations">
-      
-           <span>restaurant safran</span>
-       
-     </div>
-     <a
-       href="/2"
-       class="theme-card__button"
-       aria-label="Accéder à l'espace restaurant">Voir le restaurant 2</a>
-   </article>
 
-   <article class="theme-card">
     <div class="theme-card__informations">
-      
-       
-          <span>restaurant Mina's</span>
-      
+     <ul>
+       <li>
+         <img src="/images/Dubai/Brunch Dubai 1.jpg" alt="" /><span></span>
+       </li>
+     </ul>
+       <span>restaurant safran</span>
     </div>
     <a
-      href="/3"
+      href="/#"
       class="theme-card__button"
-      aria-label="Accéder à l'espace restaurant">Voir le restaurant 3</a>
+      aria-label="Accéder à l'espace restaurant">Voir le restaurant 1</a>
   </article>
 
   <article class="theme-card">
+
     <div class="theme-card__informations">
-      
-          <span>restaurant Musk</span>
-     
+     <ul>
+       <li>
+         <img src="/images/Dubai/Brunch Dubai 1.jpg" alt="" /><span></span>
+       </li>
+     </ul>
+       <span>restaurant Mina's</span>
     </div>
     <a
-      href="/4"
+      href="/#"
       class="theme-card__button"
-      aria-label="Accéder à l'espace restaurant">Voir le restaurant 4</a>
+      aria-label="Accéder à l'espace restaurant">Voir le restaurant 1</a>
   </article>
 
+  <article class="theme-card">
+
+    <div class="theme-card__informations">
+     <ul>
+       <li>
+         <img src="/images/Dubai/Brunch Dubai 1.jpg" alt="" /><span></span>
+       </li>
+     </ul>
+       <span>restaurant Musk</span>
+    </div>
+    <a
+      href="/#"
+      class="theme-card__button"
+      aria-label="Accéder à l'espace restaurant">Voir le restaurant 1</a>
+  </article>
+
+  <article class="theme-card">
+
+    <div class="theme-card__informations">
+     <ul>
+       <li>
+         <img src="/images/Dubai/Brunch Dubai 1.jpg" alt="" /><span></span>
+       </li>
+     </ul>
+       <span>restaurant La Turca</span>
+    </div>
+    <a
+      href="/#"
+      class="theme-card__button"
+      aria-label="Accéder à l'espace restaurant">Voir le restaurant 1</a>
+  </article>
+
+ 
    
-  <article class="theme-card">
-    <div class="theme-card__informations">
-      
-       
-          <span>restaurant La Turca</span>
-      
-    </div>
-    <a
-      href="/5"
-      class="theme-card__button"
-      aria-label="Accéder à l'espace restaurant">Voir le restaurant 5</a>
-  </article>
- 
   
  </section>
 </main>

@@ -1,5 +1,5 @@
 <script>
-   // import { link } from "svelte-spa-router";
+   import { link } from "svelte-spa-router";
 
     // Fonction pour afficher le menu en mobile
     function displayMenu() {
