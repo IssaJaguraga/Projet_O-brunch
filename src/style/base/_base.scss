@@ -5,6 +5,12 @@
 body {
   font-family: "Open Sans", sans-serif;
   margin: auto;
-  max-width: 80%;
- 
-}
+  width: 80%;
+  }
+  
+  #app {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
