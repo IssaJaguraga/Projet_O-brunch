@@ -9,6 +9,5 @@ import Footer from "./components/Footer.svelte";
 
 </script>
 
-<Header />
+
 <AllRestaurant />
-<Footer />

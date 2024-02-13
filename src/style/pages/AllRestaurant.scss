@@ -1,0 +1,36 @@
+@use "../utils/variables" as *;
+@use "../utils/mixins";
+
+
+img {
+    
+    width: 350px; /* Largeur de chaque image */
+    height: 350px; /* Hauteur de chaque image */
+    //overflow: hidden; /* Pour cacher tout contenu dépassant de la taille spécifiée */
+    border-radius: 5%;
+    display: inline-block;
+   
+    object-fit: cover;
+}
+h1{
+   font-size: 29,2px; 
+}
+
+h2{
+    font-family: Open Sans;
+ }
+h1, h2 {
+    text-align: center;
+}
+ul {
+    list-style-type: none; /* Permet de supprimer la marque du li */
+}
+  
+a {
+    text-decoration: none; /* Permet de supprimer la ligne en dessous du lien */
+}
+   
+.theme-card {
+    display: inline-block;
+    text-align: center;             
+}
