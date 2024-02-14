@@ -1,0 +1,42 @@
+@use "../utils/variables" as *;
+@use "../utils/mixins";
+
+.main_register {
+
+    margin-bottom: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & h1 {
+        color: $primary;
+        margin-bottom: 2rem;
+    }
+}
+
+
+.theme-form {
+   
+    &__input,
+    &__textarea {
+        margin: 0 0 1rem 0;
+    }
+
+    & .theme-button {
+
+        background-color: $primary;
+        color: $white-color;
+        font-size: 20px;
+        margin-top: 2rem;
+        margin-bottom: 15px;
+        height: 40px;
+        width: 250px;
+        border-style: none;
+        transition: transform .2s;
+
+    }
+
+    & .theme-button:hover {
+        transform: scale(1.1);
+    }
+}
