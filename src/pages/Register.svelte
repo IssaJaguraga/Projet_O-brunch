@@ -19,7 +19,7 @@
       const estUnEmail = formatEmail.test(valeurAVerifier);
       return estUnEmail;
     }
-  
+ 
     // Fonction de vérification du mot de passe
     function leMDPEstValide(valeurAVerifier) {
       if (valeurAVerifier.length < 8 || valeurAVerifier > 16) {
@@ -112,7 +112,7 @@
           placeholder="Votre nom"
           bind:this={lastname}
         />
-        <label class="theme-label" for="lastname">Nom</label>
+        <label class="theme-label" for="lastname"></label>
       </div>
   
       <!-- Champ prénom -->
@@ -126,7 +126,7 @@
           placeholder="Votre prénom"
           bind:this={firstname}
         />
-        <label class="theme-label" for="firstname">Prénom</label>
+        <label class="theme-label" for="firstname"></label>
       </div>
   
       <!-- Champ email -->
@@ -140,7 +140,7 @@
           placeholder="Votre adresse email"
           bind:this={email}
         />
-        <label class="theme-label" for="email-address">Adresse email</label>
+        <label class="theme-label" for="email-address"></label>
       </div>
   
       <!-- Champ mot de passe -->
@@ -154,7 +154,7 @@
           placeholder="Votre mot de passe"
           bind:this={password}
         />
-        <label class="theme-label" for="password">Mot de passe</label>
+        <label class="theme-label" for="password"></label>
       </div>
   
       <!-- envoi formulaire -->
@@ -174,14 +174,4 @@
       use:link>Déjà un compte ?</a
     >
   
-    <!-- Champs d'alertes formulaire -->
-    <div class="theme-alert error" bind:this={error}>
-      <p>Erreur lors de l'inscription</p>
-      <span on:click={cacherAlerte} on:keydown={cacherAlerte}>╳</span>
-    </div>
-  
-    <div class="theme-alert success" bind:this={success}>
-      <p>Inscription réussie</p>
-      <span on:click={cacherAlerte} on:keypress={cacherAlerte}>╳</span>
-    </div>
-  </main>
+ </main>

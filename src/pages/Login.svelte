@@ -2,6 +2,7 @@
   import { link } from "svelte-spa-router";
 </script>
 
+
 <!-- Corps de la page -->
 <main class= "main_login">
   <!-- Titre de la page -->
@@ -19,7 +20,6 @@
         aria-label="adresse email"
         placeholder="Votre adresse e-mail"
       />
-      <label class="theme-label" for="email-address">Adresse e-mail</label>
     </div>
 
     <!-- Champ mot de passe -->
@@ -32,7 +32,6 @@
         aria-label="mot de passe"
         placeholder="Votre mot de passe"
       />
-      <label class="theme-label" for="password">Mot de passe</label>
     </div>
 
     <!-- envoi formulaire -->
@@ -49,6 +48,6 @@
     class="theme-minor-link"
     href="/register"
     aria-label="Créez-vous un compte"
-    use:link>Vous n'avez pas de compte ?</a
-  >
+    use:link>Vous n'avez pas de compte ?
+    </a>
 </main>
