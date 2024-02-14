@@ -7,6 +7,9 @@
 // 2 - Layout
 @use "layout/header";
 @use "layout/footer";
+@use "layout/login";
+@use "layout/register";
+
 
 // 3 - Pages
 @use "pages/AllRestaurant";

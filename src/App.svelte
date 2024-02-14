@@ -1,12 +1,35 @@
 <script>
 
 import Header from "./components/Header.svelte";
-import AllRestaurant from "./pages/AllRestaurant.svelte";
 import Footer from "./components/Footer.svelte";
-//import Router, { location } from "svelte-spa-router";
-//import routes from "./routes";
 
+import Router, {location} from "svelte-spa-router";
+import routes from "./routes";
+import { beforeUpdate } from "svelte";
+
+beforeUpdate(() => {
+    $location === "/"
+      ? document.body.classList.add("homepage")
+      : document.body.classList.remove("homepage");
+  });
 </script>
 
 
-<AllRestaurant />
+
+
+
+<Header />
+
+
+<Router {routes} />
+<Footer />
+
+
+
+
+
+
+
+
+
+
