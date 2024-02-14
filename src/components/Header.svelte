@@ -19,7 +19,7 @@
 <header>
     
     <a
-        href="/"
+        href="#/"
         class="home-link-logo"
         aria-label="Aller à la page d'accueil"
         use:link
@@ -55,7 +55,7 @@
 
                 <li role="menuitem">
                 <a
-                    href="#"
+                    href="#/"
                     class="nav-menu__link"
                     aria-label="Historique du brunch"
                     on:click={hideMenu}
@@ -64,7 +64,7 @@
             </li>
             <li role="menuitem">
                 <a
-                    href="#"
+                    href="#/"
                     class="nav-menu__link"
                     aria-label="A propos d'OBrunch"
                     on:click={hideMenu}
@@ -74,7 +74,7 @@
 
             <li role="menuitem">
                 <a
-                    href="#"
+                    href="#/"
                     class="nav-menu__link"
                     aria-label="Se connecter à votre compte"
                     on:click={hideMenu}

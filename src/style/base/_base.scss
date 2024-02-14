@@ -1,16 +1,17 @@
 @use "../utils/variables" as *;
 @use "../utils/mixins";
 
-/* -- Styles généraux --  */
 body {
   font-family: "Open Sans", sans-serif;
   margin: auto;
   width: 80%;
   }
   
+/*
   #app {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
   }
+*/
