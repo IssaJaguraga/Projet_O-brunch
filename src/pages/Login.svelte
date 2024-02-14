@@ -3,7 +3,7 @@
 </script>
 
 <!-- Corps de la page -->
-<main>
+<main class= "main_login">
   <!-- Titre de la page -->
   <h1>Se connecter</h1>
 
@@ -17,9 +17,9 @@
         id="email"
         name="email-address"
         aria-label="adresse email"
-        placeholder="xxxxxxx@mail.com"
+        placeholder="Votre adresse e-mail"
       />
-      <label class="theme-label" for="email-address">Adresse email</label>
+      <label class="theme-label" for="email-address">Adresse e-mail</label>
     </div>
 
     <!-- Champ mot de passe -->
@@ -30,7 +30,7 @@
         id="password"
         name="password"
         aria-label="mot de passe"
-        placeholder="********"
+        placeholder="Votre mot de passe"
       />
       <label class="theme-label" for="password">Mot de passe</label>
     </div>
