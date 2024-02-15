@@ -9,8 +9,6 @@
 @use "layout/footer";
 @use "layout/login";
 @use "layout/register";
-
-
-// 3 - Pages
-@use "pages/AllRestaurant";
+@use "layout/Home";
+@use "layout/AllRestaurant";
 
