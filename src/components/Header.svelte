@@ -1,5 +1,5 @@
 <script>
-    import { link } from "svelte-spa-router";
+   import { link } from "svelte-spa-router";
 
     // Fonction pour afficher le menu en mobile
     function displayMenu() {
@@ -69,6 +69,16 @@
                     aria-label="A propos d'OBrunch"
                     on:click={hideMenu}
                     use:link>A propos d'Obrunch</a
+                >
+            </li>
+
+            <li role="menuitem">
+                <a
+                    href="/allrestaurant"
+                    class="nav-menu__link"
+                    aria-label="Tous les restaurants"
+                    on:click={hideMenu}
+                    use:link>Tous les restaurants</a
                 >
             </li>
 

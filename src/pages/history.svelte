@@ -9,7 +9,7 @@
         
         <p>Merci de faire partie de notre voyage chez O'Brunch. Nous avons hâte de continuer à vous inspirer avec les meilleures adresses de brunch du monde entier.</p>
 
-        <img src="../../public/images/Paris/Brunch Paris 5V.jpg" alt="brunch">
+        <img src="../../public/images/Paris/Brunch Paris5.jpg" alt="brunch">
 </main>
 
 <style>

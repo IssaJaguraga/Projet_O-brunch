@@ -7,7 +7,12 @@
 <main class= "main_login">
   <!-- Titre de la page -->
   <h1>Se connecter</h1>
-
+  <a
+  href="/login"
+  class="home-link-logo"
+  aria-label="Aller à la page d'accueil"
+  use:link
+/>
   <!-- Formulaire d'inscription -->
   <form class="theme-form" method="GET">
     <!-- Champ email -->
