@@ -1,0 +1,221 @@
+section{
+    background-color: #FFBD59;
+    padding-top: 15%;
+}
+
+h2 {
+    padding-left: 5px;
+    margin-left: 10px;
+}
+
+img {
+    
+    width: 300px; /* Largeur de chaque image */
+    height: 300px; /* Hauteur de chaque image */
+    //overflow: hidden; /* Pour cacher tout contenu dépassant de la taille spécifiée */
+    border-radius: 5%;
+    display: inline-block;
+   
+    object-fit: cover;
+}
+
+button {
+    margin-top: 0px;
+    margin-left: 50px;
+    padding: 10px;
+    border-radius: 8px;
+    background-color:#FFE6C0;
+
+
+}
+.btn{
+    color: white;
+    background-color: #FFBD59;
+    
+    
+}
+
+input{
+    border-radius: 8px;
+    padding:10px;
+    
+    
+}
+section{
+    padding-left: 35%;
+    padding-bottom: 15%;
+}
+
+/* filtres*/
+.margFiltre {
+    margin-top: 50px;
+    margin-bottom: 40px;
+}
+
+.filtre {
+    display: flex;
+    align-items: center;
+}
+
+.margFiltreTitre {
+    margin-right: 20px;
+}
+
+.filtreTexteIcons {
+    border: 2px solid #f2f2f2;
+    height: 50px;
+    border-radius: 30px;
+    margin-right: 20px;
+
+}
+.filtreTexteIcons:hover > .filtreTexte {
+    color:#FFBD59;
+}
+.filtreTexteIcons:hover > .filtreIcons {
+    color:white;
+    border-color: #FFBD59;
+}
+.filtreTexte {
+    height: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 0 25px 25px 0;
+}
+.filtreIcons{
+    margin-left: -2px;
+    border-radius: 25px;
+    width: 52px;
+    height: 52px;
+    color:#FFBD59;
+    background-color: #FFE6C0;
+}
+/*
+.container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-item {
+    width: 300px;
+    margin: 1rem;
+    position: relative;
+    border-radius: 8px;
+    background: white;
+    padding-bottom: 2rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 20px 40px rgba(87, 84, 84, 0.328);
+}
+
+.card-item:hover {
+    transform: rotate(1deg);
+    box-shadow: 0 20px 40px rgba(16, 14, 14, 0.5);
+}
+/*
+.image {
+    width: 300px;
+    height: 200px;
+    border-radius: 8px;
+    position: relative;
+    transition: all 0.5s;
+    background-size: cover;
+    background-position: center center;
+}
+
+.image1 {
+    background-image: url('#');
+}
+*/
+.title {
+    margin: 1rem 0;
+    color:#FFBD59;
+    font-size: 1.4rem;
+}
+
+p {
+    font-size: 14px;
+    margin-bottom: 2rem;
+    font-family: sans-serif;
+    color:#FFBD59(124, 133, 141);
+}
+
+.button {
+    color: white;
+    font-size: 12px;
+    text-align: center;
+    padding: 10px 18px;
+    text-decoration: none;
+    background-color: #FFBD59;
+    
+}
+
+
+.navbar {
+    overflow: hidden;
+    
+  }
+  .navbar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    border-radius: 2px;
+  }
+  
+  .navbar .icon {
+    display: none;
+  }
+  .more {
+    float: left;
+    overflow: hidden;
+    border-radius: 8px;
+    
+  }
+  .more .btn {
+    font-size: 20px;    
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: #FFE6C0;
+    
+    font-family: inherit;
+    margin: 0;
+  }
+  .more-menu {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 8px;
+  }
+  .more-menu a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    border-radius: 8px;
+  }
+  .navbar a:hover, .more:hover .btn {
+    background-color: #FFBD59;
+    color: white;
+    border-radius: 8px;
+  }
+
+  .dropdown-menu a:hover {
+    background-color: #FFE6C0;
+    color: black;
+  }
+  .more:hover .more-menu {
+    display: block;
+  }
