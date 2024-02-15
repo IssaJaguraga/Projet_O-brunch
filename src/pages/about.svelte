@@ -9,25 +9,3 @@
 
 </main>
 
-<style>
-    main {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-    h1 {
-      font-size: 29.2px;
-      text-align: center;
-    }
-    p {
-      font-size: 16px;
-      line-height: 1.5;
-      text-align: justify;
-    }
-    img {
-      display: block;
-      margin: 0 auto;
-      max-width: 100%;
-      height: auto;
-    }
-  </style>
