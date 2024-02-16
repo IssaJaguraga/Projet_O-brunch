@@ -16,23 +16,5 @@ beforeUpdate(() => {
 </script>
 
 <Header />
-<Footer />
-
-
-
-
-<Header />
-
-
 <Router {routes} />
 <Footer />
-
-
-
-
-
-
-
-
-
-
