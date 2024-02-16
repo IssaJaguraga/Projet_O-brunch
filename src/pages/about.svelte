@@ -1,3 +1,6 @@
+<script>
+    import '../style/layout/_about.scss'; // Import du fichier SCSS?
+</script>
 <main>
     <h1>À Propos de O'Brunch</h1>
         <h2>O'Brunch, votre complice gourmand pour explorer les délices du brunch aux quatre coins du globe.</h2>
