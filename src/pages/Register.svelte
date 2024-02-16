@@ -4,7 +4,7 @@
   
     // Déclaration des variables qui seront liées à
     // des éléments de notre code
-    let lastname, firstname, email, password, error, success;
+    let lastname, firstname, age, email, password, error, success;
   
     // Fonction de vérification des caractères spéciaux
     function aDesCaracteresSpeciaux(valeurAVerifier) {
@@ -128,6 +128,20 @@
         />
         <label class="theme-label" for="firstname"></label>
       </div>
+
+       <!-- Champ prénom -->
+       <div class="theme-form__input">
+        <input
+          class="theme-input theme-input--small"
+          type="text"
+          id="age"
+          name="age"
+          aria-label="age"
+          placeholder="Votre age"
+          bind:this={age}
+        />
+        <label class="theme-label" for="age"></label>
+      </div>
   
       <!-- Champ email -->
       <div class="theme-form__input">
@@ -161,7 +175,7 @@
       <input
         type="submit"
         class="theme-button button-validate"
-        value="Envoyer le formulaire"
+        value="Envoyer"
         aria-label="soumission formulaire"
       />
     </form>
@@ -169,7 +183,7 @@
     <!-- Lien vers page de connexion -->
     <a
       class="theme-minor-link"
-      href="/login"
+      href="/connexion"
       aria-label="Connectez-vous à votre compte"
       use:link>Déjà un compte ?</a
     >
