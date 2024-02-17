@@ -183,7 +183,7 @@
     <!-- Lien vers page de connexion -->
     <a
       class="theme-minor-link"
-      href="/connexion"
+      href="/login"
       aria-label="Connectez-vous à votre compte"
       use:link>Déjà un compte ?</a
     >
