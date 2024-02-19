@@ -1,0 +1,89 @@
+h1{
+    padding-left: 40%;
+}
+
+h2{
+    text-align: center;
+    color: #FFBD59;
+    
+}
+
+/* banniere pour commentaires */
+:placeholder-shown{
+    width: 80%;
+    height: 100px;
+    text-align: center;
+    border-radius: 8px;
+    background-color: #FFE6C0;
+   margin-left: 120px;
+   padding-left: 30px;
+   padding-right: 30px;
+}
+
+/* étoiles pour noter les commentaires*/
+.star {
+    color: #ccc;
+    cursor: pointer;
+  }
+  
+  .star:hover,
+  .star.selected {
+    color: gold;
+  }
+  
+/* centrer le contenu */
+body{
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+}
+
+/* responsive */
+@media (max-width: 2500px) {
+    .img_type img {
+        max-width: 100%;
+    }
+}
+
+  
+
+
+
+
+  button {
+    background-color: #FFBD59;
+    border-radius: 8px
+  };
+
+
+  /* mise en forme des images en tete de page */
+.img_type img{
+   
+    box-sizing: content-box;
+    justify-content: center;
+    align-items: stretch;
+    flex-direction: row;
+    height: 600px;
+    width: 500px;
+    border-radius: 8px;
+    width: 500px;
+    height: 500px;
+    
+};
+
+  .img_type {
+    width: 100%; /* La largeur de .img_type sera égale à 100% de la largeur de son conteneur */
+   
+  
+}
+
+.img_type img {
+    
+    height: 300px;
+    margin-right: 10px;
+}
+
+/* Pour supprimer la marge de la dernière image */
+.img_type img:last-child {
+    margin-right: 0;
+}

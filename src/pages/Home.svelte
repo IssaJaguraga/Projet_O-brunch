@@ -1,4 +1,5 @@
 <script>
+
 </script>
 
 <main>
@@ -9,7 +10,9 @@
         <option value="">New York</option>
         <option value="">Milan</option>
       </select>
-      
+
+
+
       <div class="">
         <input
           type="text"
@@ -25,16 +28,7 @@
   </section>
   <div class="navbar" id="nav">
     <div class="more">
-      <button class="btn"
-        >Où Bruncher
-        <i class="fa fa-caret-down"></i>
-      </button>
-      <div class="more-menu">
-        <a href="#">Continents</a>
-        <a href="#">Pays</a>
-        <a href="#">Villes</a>
-        <a href="#">Restaurants</a>
-      </div>
+
 
       <!--presentation de la page-->
 
@@ -79,6 +73,7 @@
 
       <article class="theme-card">
         <button id="btn">voir plus</button>
+
         <div class="theme-card__informations">
           <ul>
             <li>
@@ -166,9 +161,9 @@
       </article>
 
       <article class="theme-card">
-        <a href="/src/pages/AllRestaurant.svelte"
-          ><button id="btn">voir plus</button></a
-        >
+
+        <button id="btn">voir plus</button>
+
         <div class="theme-card__informations">
           <ul>
             <li>

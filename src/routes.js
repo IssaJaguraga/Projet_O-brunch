@@ -8,14 +8,20 @@ import Conditions from "./pages/conditions.svelte"
 
 
 
+
+
 export default {
-  "/": Home, 
-  "/login": Login, 
+  "/": Home,
+  "/login": Login,
   "/register": Register,
   "/AllRestaurant": AllRestaurant,
   "/history": History,
   "/about": About,
+
   "/conditions": Conditions,
- 
- 
-};
+
+}
+
+
+
+

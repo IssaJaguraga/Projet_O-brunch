@@ -3,6 +3,17 @@ section{
     padding-top: 15%;
 }
 
+
+article{
+    box-sizing: border-box;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    
+}
+
+
+
 h2 {
     padding-left: 5px;
     margin-left: 10px;
@@ -10,9 +21,10 @@ h2 {
 
 img {
     
-    width: 300px; /* Largeur de chaque image */
-    height: 300px; /* Hauteur de chaque image */
-    //overflow: hidden; /* Pour cacher tout contenu dépassant de la taille spécifiée */
+
+    width: 300px; 
+    height: 300px; 
+    align-items: center;
     border-radius: 5%;
     display: inline-block;
    
