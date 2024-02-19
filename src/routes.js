@@ -4,7 +4,7 @@ import Register from "./pages/Register.svelte";
 import AllRestaurant from "./pages/AllRestaurant.svelte";
 import History from "./pages/history.svelte";
 import About from "./pages/about.svelte";
-import Description from "./components/PageType.svelte";
+import PageType from "./components/PageType.svelte";
 
 
 
@@ -17,7 +17,7 @@ export default {
   "/AllRestaurant": AllRestaurant,
   "/history": History,
   "/about": About,
-  "/PageType": Description
+  "/PageType": PageType
   
  
  
