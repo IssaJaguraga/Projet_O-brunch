@@ -3,7 +3,7 @@
 
 /* -- Header -- */
 header {
-  
+
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -24,6 +24,7 @@ header {
     width: 40px;
     height: 40px;
     background: url("/public/icons/UserIcon.png") center/cover;
+
 
     // Variante du bouton utilisée pour afficher une croix de fermeture
     &--close {
@@ -59,7 +60,7 @@ header {
       border-radius: 0.5rem;
       transition: ease-in-out 0.4s all;
     }
-    
+
     &__link {
       color: $primary;
       text-decoration: none;
@@ -72,10 +73,15 @@ header {
   }
 }
 
+
+
+
 // MEDIA-QUERIES
 @include mixins.desktop {
+
   /* -- Header -- */
   header {
+
     /* Le bouton de menu disparaît au format desktop */
     .menu-button {
       display: none;
@@ -94,7 +100,7 @@ header {
         display: flex;
         flex-direction: row;
         list-style-type: none;
-        
+
       }
 
       li {
@@ -122,3 +128,18 @@ header {
     }
   }
 }
+
+@include mixins.tablet {
+
+.nav-menu {
+      display: flex !important; // "!important" est utilisé pour afficher correctement le menu en desktop entre chaque page sans rechargement
+      flex-direction: row;
+      justify-content: flex-end;
+      position: relative;
+      width: 40%;
+      height: 40%px;
+      background: none;
+
+}
+
+  }
