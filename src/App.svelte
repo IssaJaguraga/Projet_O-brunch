@@ -14,12 +14,7 @@ beforeUpdate(() => {
   });
 </script>
 
-
-
-
-
 <Header />
-
 
 <Router {routes} />
 <Footer />

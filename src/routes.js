@@ -4,6 +4,8 @@ import Register from "./pages/Register.svelte";
 import AllRestaurant from "./pages/AllRestaurant.svelte";
 import History from "./pages/history.svelte";
 import About from "./pages/about.svelte";
+import Conditions from "./pages/conditions.svelte";
+
 
 
 
@@ -15,6 +17,7 @@ export default {
   "/AllRestaurant": AllRestaurant,
   "/history": History,
   "/about": About,
+  "/conditions": Conditions,
   
  
  
