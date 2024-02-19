@@ -1,15 +1,46 @@
 <script>
+  
+    import ThemeCard from "../components/ThemeCard.svelte";
+
+  // Pour faire comme si on recevait des données au format JSON depuis le serveur,
+  // on crée un tableau de données qui contient les données des espaces
+  const dataJson = [
+    // on a un premier espace
+    {
+      id: 1,
+      price: 100,
+      note: 25,
+      
+    },
+    {
+      id: 2,
+      price: 150,
+      note: 25
+    },
+    {
+      id: 3,
+     
+      price: 100,
+      note: 25
+    },
+    {
+      id: 4,
+      price: 100,
+      note: 25
+    }
+  ];
+
  
 </script>
 <main>
 
+  
 
 
 <h1>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae doloremque qui excepturi nesciunt consequuntur ut distinctio, sit sequi eveniet corrupti, necessitatibus nemo maiores dolore odit eaque. </h1>
 
+<section>
 
-
-    
 <h2>Les meuilleurs brunch de Dubaï</h2>
 
     <article class="theme-card"> 
@@ -612,8 +643,12 @@
                          <span>Restaurant Musk 555 Avis Clients<br>Prix moyen 57&#8364</span>
                       </div>
                       <a href="/#" class="theme-card__button" aria-label="Accéder à l'espace restaurant"></a>
-    </article>                                                                           
-   
+    </article> 
+    
+    {#each dataJson as dataAllRestaurant}
+      <ThemeCard {...dataAllRestaurant} />
+    {/each }
+  </section>
   
 
 </main>
