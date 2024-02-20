@@ -11,6 +11,7 @@ import Rgpd from "./pages/rgpd.svelte";
 
 
 
+
 export default {
   "/": Home,
   "/login": Login,
@@ -18,8 +19,9 @@ export default {
   "/AllRestaurant": AllRestaurant,
   "/history": History,
   "/about": About,
-  "/conditions": Conditions,
   "/rgpd": Rgpd,
+  "/conditions": Conditions,
+
  
  
 };

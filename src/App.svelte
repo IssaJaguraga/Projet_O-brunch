@@ -5,7 +5,7 @@ import Footer from "./components/Footer.svelte";
 
 
 
-import TestApi from "./components/TestApi.svelte";
+
 import Router, {location} from "svelte-spa-router";
 import routes from "./routes";
 import { beforeUpdate } from "svelte";
@@ -20,11 +20,7 @@ beforeUpdate(() => {
 
 
 
-
-
 <Header />
-<TestApi />
-
 <Router {routes} />
 <Footer />
 

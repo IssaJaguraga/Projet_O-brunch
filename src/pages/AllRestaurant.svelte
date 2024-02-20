@@ -1,7 +1,5 @@
 <script>
-  
-  import ThemeCard from "../components/ThemeCard.svelte";
-
+ 
 // Pour faire comme si on recevait des données au format JSON depuis le serveur,
 // on crée un tableau de données qui contient les données des espaces
 const dataJson = [
@@ -646,10 +644,7 @@ const dataJson = [
                       <a href="/#" class="theme-card__button" aria-label="Accéder à l'espace restaurant"></a>
     </article> 
        
-    {#each dataJson as dataAllRestaurant}
-      <ThemeCard {...dataAllRestaurant} />
-    {/each }
-   
+    
   </section>
   
 

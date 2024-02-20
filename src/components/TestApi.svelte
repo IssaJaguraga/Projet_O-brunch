@@ -114,7 +114,7 @@
          les résultats -->
    
     <!-- on peut travailler sur la variable qui contient le résultat -->
-    <p>{AllRestaurant}</p>
+    {AllRestaurant}
 {/await}
 <!-- on appelle la fonction getSpaces() pour afficher les espaces
      - la fonction est asynchrone, donc on doit attendre la réponse -->
@@ -128,5 +128,5 @@
           les résultats -->
    
      <!-- on peut travailler sur la variable qui contient le résultat -->
-     <p>{AllRestaurant}</p>
+     {AllRestaurant}
  {/await}

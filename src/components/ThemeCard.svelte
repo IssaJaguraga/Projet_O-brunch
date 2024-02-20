@@ -1,6 +1,5 @@
 <script>
-    import { link } from "svelte-spa-router";
-   
+    
        // on crée des propriétés pour pouvoir utiliser
        // notre composant avec différentes données
        // (= les données propres à chaque espace)
