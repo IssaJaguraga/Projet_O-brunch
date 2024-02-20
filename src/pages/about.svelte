@@ -1,5 +1,5 @@
 <script>
-    import '../style/layout/_about.scss'; // Import du fichier SCSS?
+
 </script>
 <main>
     <h1>À Propos de O'Brunch</h1>
