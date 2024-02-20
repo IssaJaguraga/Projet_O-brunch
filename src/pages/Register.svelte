@@ -4,7 +4,7 @@
   
     // Déclaration des variables qui seront liées à
     // des éléments de notre code
-    let lastname, firstname, age, email, password, error, success;
+    let lastname, firstname, email, password, error, success;
   
     // Fonction de vérification des caractères spéciaux
     function aDesCaracteresSpeciaux(valeurAVerifier) {
@@ -54,7 +54,6 @@
       if (
         lastname.value == "" ||
         firstname.value == "" ||
-        age.value == "" ||
         email.value == "" ||
         password.value == ""
       ) {
@@ -73,10 +72,6 @@
       if (aDesCaracteresSpeciaux(lastname.value)) {
         isError = true;
         tabError.push("Prénom invalide");
-      }
-       if (aDesCaracteresSpeciaux(age.value)) {
-        isError = true;
-        tabError.push("Age invalide");
       }
       if (estUneAdresseEmail(email.value) === false) {
         isError = true;
@@ -133,20 +128,6 @@
         />
         <label class="theme-label" for="firstname"></label>
       </div>
-
-       <!-- Champ prénom -->
-       <div class="theme-form__input">
-        <input
-          class="theme-input theme-input--small"
-          type="text"
-          id="age"
-          name="age"
-          aria-label="age"
-          placeholder="Votre age"
-          bind:this={age}
-        />
-        <label class="theme-label" for="age"></label>
-      </div>
   
       <!-- Champ email -->
       <div class="theme-form__input">
@@ -180,7 +161,7 @@
       <input
         type="submit"
         class="theme-button button-validate"
-        value="Envoyer"
+        value="Envoyer le formulaire"
         aria-label="soumission formulaire"
       />
     </form>

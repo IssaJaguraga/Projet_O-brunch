@@ -2,15 +2,39 @@
 
 import Header from "./components/Header.svelte";
 import Footer from "./components/Footer.svelte";
-//import Router, { location } from "svelte-spa-router";
-//import routes from "./routes";
+import PageType from "./components/PageType.svelte";
+
+
+
+import Router, {location} from "svelte-spa-router";
+import routes from "./routes";
+import { beforeUpdate } from "svelte";
+
+
+beforeUpdate(() => {
+    $location === "/"
+      ? document.body.classList.add("homepage")
+      : document.body.classList.remove("homepage");
+  });
+
+
 
 <<<<<<< Updated upstream
 </script>
 
 
-<Header/>
-<Footer/>
+
+
+
+
+<Header />
+
+
+<Router {routes} />
+<Footer />
+
+
+
 
 
 

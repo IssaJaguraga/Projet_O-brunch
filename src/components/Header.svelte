@@ -1,5 +1,5 @@
 <script>
-    import { link } from "svelte-spa-router";
+   import { link } from "svelte-spa-router";
 
     // Fonction pour afficher le menu en mobile
     function displayMenu() {
@@ -54,7 +54,7 @@
 
                 <li role="menuitem">
                 <a
-                    href="#/"
+                    href="/history"
                     class="nav-menu__link"
                     aria-label="Historique du brunch"
                     on:click={hideMenu}
@@ -63,7 +63,7 @@
             </li>
             <li role="menuitem">
                 <a
-                    href="#/"
+                    href="/about"
                     class="nav-menu__link"
                     aria-label="A propos d'OBrunch"
                     on:click={hideMenu}
@@ -73,7 +73,17 @@
 
             <li role="menuitem">
                 <a
-                    href="#/"
+                    href="/allrestaurant"
+                    class="nav-menu__link"
+                    aria-label="Tous les restaurants"
+                    on:click={hideMenu}
+                    use:link>Tous les restaurants</a
+                >
+            </li>
+
+            <li role="menuitem">
+                <a
+                    href="/login"
                     class="nav-menu__link"
                     aria-label="Se connecter à votre compte"
                     on:click={hideMenu}
