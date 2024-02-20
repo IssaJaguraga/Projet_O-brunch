@@ -5,9 +5,7 @@ import AllRestaurant from "./pages/AllRestaurant.svelte";
 import History from "./pages/history.svelte";
 import About from "./pages/about.svelte";
 import Conditions from "./pages/conditions.svelte"
-
-
-
+import Rgpd from "./pages/rgpd.svelte"
 
 
 export default {
@@ -17,7 +15,7 @@ export default {
   "/AllRestaurant": AllRestaurant,
   "/history": History,
   "/about": About,
-
+  "/rgpd": Rgpd,
   "/conditions": Conditions,
 
 }
