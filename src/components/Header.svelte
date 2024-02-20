@@ -4,8 +4,7 @@
     // Fonction pour afficher le menu en mobile
     function displayMenu() {
         const navMenu = document.querySelector(".nav-menu");
-        navMenu.style.display = "flex";
-        navMenu.style.right = 0;
+        navMenu.style.display = "block";
         
     }
 

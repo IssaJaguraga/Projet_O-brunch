@@ -19,6 +19,7 @@ beforeUpdate(() => {
 
 
 
+<<<<<<< Updated upstream
 </script>
 
 
@@ -38,6 +39,16 @@ beforeUpdate(() => {
 
 
 
+=======
+import Router, {location} from "svelte-spa-router";
+import routes from "./routes";
+
+</script>
+
+<Header />
+<Router {routes} />
+<Footer />
+>>>>>>> Stashed changes
 
 
 
