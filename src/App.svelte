@@ -5,6 +5,7 @@ import Footer from "./components/Footer.svelte";
 //import Router, { location } from "svelte-spa-router";
 //import routes from "./routes";
 
+<<<<<<< Updated upstream
 </script>
 
 
@@ -14,6 +15,16 @@ import Footer from "./components/Footer.svelte";
 
 
 
+=======
+import Router, {location} from "svelte-spa-router";
+import routes from "./routes";
+
+</script>
+
+<Header />
+<Router {routes} />
+<Footer />
+>>>>>>> Stashed changes
 
 
 
