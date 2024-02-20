@@ -9,9 +9,11 @@ import Rgpd from "./pages/rgpd.svelte";
 
 
 
+
+
 export default {
-  "/": Home, 
-  "/login": Login, 
+  "/": Home,
+  "/login": Login,
   "/register": Register,
   "/AllRestaurant": AllRestaurant,
   "/history": History,

@@ -107,7 +107,7 @@
 {#await getAllRestaurant()}
     <!-- dans la partie await, on peut mettre du code qui est affiché
          en attendant que les résultats soient là -->
-    <p>On patiente... la liste des espaces arrive !!!</p>
+   
 <!-- on peut récupérer directement le résultat de la fonction dans une variable -->
 {:then AllRestaurant}
     <!-- dans la partie then, on peut afficher du code une fois que l'on a

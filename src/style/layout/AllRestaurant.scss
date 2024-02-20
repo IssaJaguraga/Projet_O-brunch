@@ -1,46 +1,25 @@
 @use "../utils/variables" as *;
 @use "../utils/mixins";
 
-
-img {
-    
-    width: 300px; /* Largeur de chaque image */
-    height: 300px; /* Hauteur de chaque image */
-    //overflow: hidden; /* Pour cacher tout contenu dépassant de la taille spécifiée */
-    border-radius: 5%;
-    display: inline-block;
-    object-fit: cover;
-    
-}
-h1{
- font-family: "Open-sans", sans-serif;
- font-size: 25px; 
- text-align: justify;
- margin-bottom: 10%;
- font-weight: normal;
+.Présentation{
+    font-family: "Open-sans", sans-serif;
+    font-size: 25px; 
+    text-align: justify;
+    margin-bottom: 10%;
+    font-weight: normal;
+    text-align: center;
 }
 
-h2{
+.restaurant {
+    background-color: white;
+}
+
+.title_restaurant{
     margin-top: 7%;
     margin-bottom: -13px;
    margin-inline-start: 62px;
 }
     
-
-h1{
-    text-align: center;
-}
-
-ul {
-    list-style-type: none; /* Permet de supprimer la marque du li */
-}
-  
-
- 
-a {
-    text-decoration: none; /* Permet de supprimer la ligne en dessous du lien */
-}
-   
 .theme-card {
     display: inline-block;
     text-align: center; 
@@ -49,6 +28,32 @@ a {
 }
 
 
-div {
+
     
+    .pictures {
+        width: 300px; /* Largeur de chaque image */
+        height: 300px; /* Hauteur de chaque image */
+        /* overflow: hidden; Pour cacher tout contenu dépassant de la taille spécifiée */
+        border-radius: 5%;
+        display: inline-block;
+        object-fit: cover;
+        list-style-type: none; /* Permet de supprimer la marque du li */
+    }
+
+
+.restaurant-grid {
+    background-color: white;
 }
+
+
+
+ 
+.theme-card__button {
+    text-decoration: none; /* Permet de supprimer la ligne en dessous du lien */
+}
+   
+
+.theme-card__informations {
+    list-style-type: none; /* Permet de supprimer la marque du li */
+}
+

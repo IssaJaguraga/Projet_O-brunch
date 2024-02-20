@@ -1,57 +1,58 @@
 <script>
   
-    import ThemeCard from "../components/ThemeCard.svelte";
+  import ThemeCard from "../components/ThemeCard.svelte";
 
-  // Pour faire comme si on recevait des données au format JSON depuis le serveur,
-  // on crée un tableau de données qui contient les données des espaces
-  const dataJson = [
-    // on a un premier espace
-    {
-      id: 1,
-      price: 100,
-      note: 25,
-      
-    },
-    {
-      id: 2,
-      price: 150,
-      note: 25
-    },
-    {
-      id: 3,
-     
-      price: 100,
-      note: 25
-    },
-    {
-      id: 4,
-      price: 100,
-      note: 25
-    }
-  ];
+// Pour faire comme si on recevait des données au format JSON depuis le serveur,
+// on crée un tableau de données qui contient les données des espaces
+const dataJson = [
+  // on a un premier espace
+  {
+    id: 1,
+    price: 100,
+    note: 25,
+    
+  },
+  {
+    id: 2,
+    price: 150,
+    note: 25
+  },
+  {
+    id: 3,
+   
+    price: 100,
+    note: 25
+  },
+  {
+    id: 4,
+    price: 100,
+    note: 25
+  }
+];
+
 
  
 </script>
-<main>
+<main class="ma">
 
   
 
 
-<h1>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae doloremque qui excepturi nesciunt consequuntur ut distinctio, sit sequi eveniet corrupti, necessitatibus nemo maiores dolore odit eaque. </h1>
+<h1 class="Présentation">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae doloremque qui excepturi nesciunt consequuntur ut distinctio, sit sequi eveniet corrupti, necessitatibus nemo maiores dolore odit eaque. </h1>
 
-<section>
-
-<h2>Les meuilleurs brunch de Dubaï</h2>
+<section class="restaurant" aria-label="Tous les restaurants"> 
+<div class='moi'>
+<h2 class="title_restaurant"> Les meuilleurs brunch de Dubaï </h2>
 
     <article class="theme-card"> 
-              <div class="theme-card__informations">
-               <ul>
+            
+               <ul class="theme-card__informations">
                  <li>
-                   <img src="/images/Dubai/Brunch Dubai1.jpg" alt="" /><span></span>
+                   <img class="pictures" src="/images/Dubai/Brunch Dubai1.jpg" alt="" /><span></span>
                  </li>
                </ul>
                  <span>Restaurant Nara 149 Avis Clients<br>Prix moyen 36&#8364</span>
-              </div>
+            
               <a href="/#" class="theme-card__button" aria-label="Accéder à l'espace restaurant"></a>
     </article>
 
@@ -102,7 +103,7 @@
               </div>
               <a href="/#" class="theme-card__button" aria-label="Accéder à l'espace restaurant"></a>
     </article>
-
+  </div>
     <h2>Les meuilleurs brunch de New york</h2>
     <article class="theme-card"> 
               <div class="theme-card__informations">
@@ -644,10 +645,11 @@
                       </div>
                       <a href="/#" class="theme-card__button" aria-label="Accéder à l'espace restaurant"></a>
     </article> 
-    
+       
     {#each dataJson as dataAllRestaurant}
       <ThemeCard {...dataAllRestaurant} />
     {/each }
+   
   </section>
   
 
