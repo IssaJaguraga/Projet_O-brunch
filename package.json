@@ -18,6 +18,7 @@
   "dependencies": {
     "@popperjs/core": "^2.11.8",
     "jquery": "^3.7.1",
+    "surge": "^0.23.1",
     "svelte-spa-router": "^4.0.1"
   }
 }
