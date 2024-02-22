@@ -1,5 +1,4 @@
 <script>
-
 </script>
 
 <main>
@@ -10,8 +9,6 @@
         <option value="">New York</option>
         <option value="">Milan</option>
       </select>
-
-
 
       <div class="">
         <input
@@ -28,8 +25,6 @@
   </section>
   <div class="navbar" id="nav">
     <div class="more">
-
-
       <!--presentation de la page-->
 
       <p>
@@ -45,28 +40,20 @@
       <article class="theme-card">
         <h2>Restaurants à Paris</h2>
         <div class="theme-card__informations">
-          <ul>
-            <li>
-              <img
-                src="/images/Paris/Brunch Paris1.jpg"
-                alt="Restaurant brunch à Paris"
-              /><span></span>
-            </li>
-          </ul>
+          <img
+            src="/images/Paris/Brunch Paris1.jpg"
+            alt="Restaurant brunch à Paris"
+          />
           <span>Restaurant Paris</span>
         </div>
       </article>
 
       <article class="theme-card">
         <div class="theme-card__informations">
-          <ul>
-            <li>
-              <img
-                src="/images/Paris/Brunch Paris2.jpg"
-                alt="Restaurant brunch à Paris"
-              /><span></span>
-            </li>
-          </ul>
+          <img
+            src="/images/Paris/Brunch Paris2.jpg"
+            alt="Restaurant brunch à Paris"
+          />
           <span>Restaurant Paris</span>
         </div>
       </article>
@@ -75,14 +62,10 @@
         <button id="btn">voir plus</button>
 
         <div class="theme-card__informations">
-          <ul>
-            <li>
-              <img
-                src="/images/Paris/Brunch Paris3.jpg"
-                alt="Restaurant brunch à Paris"
-              /><span></span>
-            </li>
-          </ul>
+          <img
+            src="/images/Paris/Brunch Paris3.jpg"
+            alt="Restaurant brunch à Paris"
+          />
           <span>Restaurant Paris</span>
         </div>
       </article>
@@ -90,28 +73,20 @@
       <article class="theme-card">
         <h2>Restaurants à New York</h2>
         <div class="theme-card__informations">
-          <ul>
-            <li>
-              <img
-                src="/images/New York/Brunch New York1.jpg"
-                alt="Restaurant brunch à New York"
-              /><span></span>
-            </li>
-          </ul>
+          <img
+            src="/images/New York/Brunch New York1.jpg"
+            alt="Restaurant brunch à New York"
+          />
           <span>Restaurant New York</span>
         </div>
       </article>
 
       <article class="theme-card">
         <div class="theme-card__informations">
-          <ul>
-            <li>
-              <img
-                src="/images/New York/Brunch New York2.jpg"
-                alt="Restaurant brunch à New York"
-              /><span></span>
-            </li>
-          </ul>
+          <img
+            src="/images/New York/Brunch New York2.jpg"
+            alt="Restaurant brunch à New York"
+          />
           <span>Restaurant New York</span>
         </div>
       </article>
@@ -119,14 +94,10 @@
       <article class="theme-card">
         <button id="btn">voir plus</button>
         <div class="theme-card__informations">
-          <ul>
-            <li>
-              <img
-                src="/images/New York/Brunch New York3.jpg"
-                alt="Restaurant brunch à New York"
-              /><span></span>
-            </li>
-          </ul>
+          <img
+            src="/images/New York/Brunch New York3.jpg"
+            alt="Restaurant brunch à New York"
+          />
           <span>Restaurant New York</span>
         </div>
       </article>
@@ -134,45 +105,32 @@
       <article class="theme-card">
         <h2>Restaurants à Séoul</h2>
         <div class="theme-card__informations">
-          <ul>
-            <li>
-              <img
-                src="/images/Seoul/Brunch Séoul1.jpg"
-                alt="Restaurant brunch à Séoul"
-              /><span></span>
-            </li>
-          </ul>
+          <img
+            src="/images/Seoul/Brunch Séoul1.jpg"
+            alt="Restaurant brunch à Séoul"
+          /><span></span>
           <span>Restaurant Séoul</span>
         </div>
       </article>
 
       <article class="theme-card">
         <div class="theme-card__informations">
-          <ul>
-            <li>
-              <img
-                src="/images/Seoul/Brunch Séoul2.jpg"
-                alt="Restaurant brunch à Séoul"
-              /><span></span>
-            </li>
-          </ul>
+          <img
+            src="/images/Seoul/Brunch Séoul2.jpg"
+            alt="Restaurant brunch à Séoul"
+          />
           <span>Restaurant Séoul</span>
         </div>
       </article>
 
       <article class="theme-card">
-
         <button id="btn">voir plus</button>
 
         <div class="theme-card__informations">
-          <ul>
-            <li>
-              <img
-                src="/images/Seoul/Brunch Séoul3.jpg"
-                alt="Restaurant brunch à Séoul"
-              /><span></span>
-            </li>
-          </ul>
+          <img
+            src="/images/Seoul/Brunch Séoul3.jpg"
+            alt="Restaurant brunch à Séoul"
+          />
           <span>Restaurant Séoul</span>
         </div>
       </article>
