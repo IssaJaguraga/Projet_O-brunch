@@ -2,6 +2,34 @@
   import Card from "../components/Card.svelte";
   import TitleSecondary from "../components/TitleSecondary.svelte";
   import Button from "../components/Button.svelte";
+
+  export let continents = [];
+  export let countries = [];
+
+  const fetchCountriesFromContinents = async (continentId) => {
+    fetch(`http://issajaguraga-server.eddi.cloud:8080/items/Country?filter[Continent_id][_eq]=${continentId}`)
+      .then(response => response.json())
+      .then(data => {
+        countries = data.data;
+      });
+  };
+
+  const fetchContinents = async () => {
+    const response = await fetch('http://issajaguraga-server.eddi.cloud:8080/items/Continent');
+
+    if (response.ok) {
+      const data = await response.json();
+      console.log(data);
+      continents = data.data;
+    }
+  };
+
+  const handleContinentSelected = (event) => {
+    const continentId = event.currentTarget.value;
+    fetchCountriesFromContinents(continentId);
+  };
+
+  fetchContinents();
 </script>
 
 <main>
@@ -11,17 +39,20 @@
       variant="white"
     />
     <form class="home-search__form">
-      <select name="continent" id="continent-select">
+      <select name="continent" id="continent-select" disabled={!continents.length} on:change={handleContinentSelected}>
         <option value="">Continent</option>
-        <option value="">Asie</option>
-        <option value="">Amérique</option>
-        <option value="">Europe</option>
+        {#each continents as continent}
+          <option value={continent.id}>{continent.name}</option>
+        {/each}
       </select>
-      <select name="country" id="country-select" disabled>
-        <option value="">Pays</option>
+      <select name="country" id="country-select" disabled={!countries.length}>
+        <option value="">--Pays--</option>
+        {#each countries as country}
+          <option value={country.id}>{country.name}</option>
+        {/each}
       </select>
       <select name="city" id="city-select" disabled>
-        <option value="">Ville</option>
+        <option value="">--Ville--</option>
       </select>
 
       <!-- <input

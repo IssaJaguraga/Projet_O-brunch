@@ -1,11 +1,10 @@
 <script>
-   import { link } from "svelte-spa-router";
-
+    import { link } from "svelte-spa-router";
+    import user from "../store/userStore";
     // Fonction pour afficher le menu en mobile
     function displayMenu() {
         const navMenu = document.querySelector(".nav-menu");
         navMenu.style.display = "block";
-        
     }
 
     // Masquer le menu en mobile
@@ -16,7 +15,6 @@
 </script>
 
 <header>
-    
     <a
         href="#/"
         class="home-link-logo"
@@ -27,7 +25,7 @@
     </a>
 
     <!-- Le bouton n'est visible qu'au format mobile & tablette -->
-        
+
     <button
         type="button"
         id="menubutton"
@@ -53,8 +51,7 @@
         />
         <!-- Notre liste comprenant notre menu -->
         <ul id="main-menu" role="menu" aria-labelledby="menubutton">
-
-                <li role="menuitem">
+            <li role="menuitem">
                 <a
                     href="/history"
                     class="nav-menu__link"
@@ -84,13 +81,17 @@
             </li>
 
             <li role="menuitem">
-                <a
-                    href="/login"
-                    class="nav-menu__link"
-                    aria-label="Se connecter à votre compte"
-                    on:click={hideMenu}
-                    use:link>Se connecter</a
-                >
+                {#if $user.token}
+                    <a href="/logout" class="nav-menu__link">Se déconnecter</a>
+                {:else}
+                    <a
+                        href="/login"
+                        class="nav-menu__link"
+                        aria-label="Se connecter à votre compte"
+                        on:click={hideMenu}
+                        use:link>Se connecter</a
+                    >
+                {/if}
             </li>
         </ul>
     </nav>
