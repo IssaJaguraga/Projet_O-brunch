@@ -16,6 +16,9 @@ beforeUpdate(() => {
 </script>
 
 
-<Header />
-<Router {routes} />
+<div class="site-container">
+  <Header />
+  <Router {routes} />
+</div>
+
 <Footer />

@@ -20,4 +20,11 @@ button {
       color: $black-color;
     }
   }
+
+  &[disabled] {
+    background-color: #ccc;
+    border-color: #ccc;
+    color: $white-color;
+    cursor: not-allowed;
+  }
 }    

@@ -8,7 +8,9 @@
 <article class="card">
   <a href="/restaurant/{id}">
     <div class="card__informations">
-      <img class="card__img" src={image} alt="" />
+      <div class="card__img-container">
+        <img class="card__img" src={image} alt="" />
+      </div>
       <p class="card__description">
         {title}
         <span class="card__note"

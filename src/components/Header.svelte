@@ -22,7 +22,9 @@
         class="home-link-logo"
         aria-label="Aller à la page d'accueil"
         use:link
-    />
+    >
+        <img src="/images/logo.png" alt="Logo O'Brunch" class="logo" />
+    </a>
 
     <!-- Le bouton n'est visible qu'au format mobile & tablette -->
         
