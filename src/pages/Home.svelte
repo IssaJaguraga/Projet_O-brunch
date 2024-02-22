@@ -5,6 +5,7 @@
 
   export let continents = [];
   export let countries = [];
+  export let towns = [];
 
   const fetchCountriesFromContinents = async (continentId) => {
     fetch(`http://issajaguraga-server.eddi.cloud:8080/items/Country?filter[Continent_id][_eq]=${continentId}`)
@@ -15,7 +16,7 @@
   };
 
   const fetchContinents = async () => {
-    const response = await fetch('http://issajaguraga-server.eddi.cloud:8080/items/Continent');
+    const response = await fetch('http://issajaguraga-server.eddi.cloud:8080/items/Continent/');
 
     if (response.ok) {
       const data = await response.json();
@@ -27,9 +28,32 @@
   const handleContinentSelected = (event) => {
     const continentId = event.currentTarget.value;
     fetchCountriesFromContinents(continentId);
+   
   };
 
+  const fetchTownsFromVilles = async (townId) => {
+    fetch(`http://issajaguraga-server.eddi.cloud:8080/items/Town?filterTown_id][_eq]=${townId}`)
+      .then(response => response.json())
+      .then(data => {
+        towns = data.data;
+      });
+  }
+  
+const fetchTowns = async () => {
+    const response = await fetch('http://issajaguraga-server.eddi.cloud:8080/items/Town/');
+
+    if (response.ok) {
+      const data = await response.json();
+      console.log(data);
+      towns = data.data;
+    }
+  };
+  
+  
+
   fetchContinents();
+  fetchTowns();
+ 
 </script>
 
 <main>
@@ -45,14 +69,19 @@
           <option value={continent.id}>{continent.name}</option>
         {/each}
       </select>
-      <select name="country" id="country-select" disabled={!countries.length}>
+
+      <select name="country" id="country-select" disabled={!countries.length} >
         <option value="">--Pays--</option>
         {#each countries as country}
           <option value={country.id}>{country.name}</option>
         {/each}
       </select>
-      <select name="city" id="city-select" disabled>
+
+      <select name="city" id="city-select" disabled={!towns.length} >
         <option value="">--Ville--</option>
+        {#each towns as town}
+          <option value={town.id}>{town.name}</option>
+        {/each}
       </select>
 
       <!-- <input
@@ -64,6 +93,7 @@
         /> -->
 
       <Button disabled>Rechercher</Button>
+      
     </form>
   </section>
   <!--presentation de la page-->
