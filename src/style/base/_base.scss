@@ -1,17 +1,28 @@
 @use "../utils/variables" as *;
 @use "../utils/mixins";
 
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
 body {
   font-family: "Open Sans", sans-serif;
   margin: auto;
-  width: 80%;
-  }
-  
-/*
-  #app {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-  }
-*/
+  font-size: 1.6rem;
+}
+
+.site-container {
+  width: 100%;
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  min-height: calc(100vh - 285px);
+}
+
+button, a {
+  transition: all 0.3s ease-in-out;
+}

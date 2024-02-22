@@ -1,0 +1,19 @@
+.secondary-title {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 2rem;
+
+  &.color-white {
+    color: #fff;
+  }
+
+  &.color-primary {
+    color: #FFBD59;
+  }
+
+  &.color-black {
+    color: #000;
+  }
+}

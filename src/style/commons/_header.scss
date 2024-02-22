@@ -9,12 +9,16 @@ header {
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  margin-bottom: 2.5rem;
 
   // Logo situé dans l'entête de page
   .home-link-logo {
-    width: 700px;
-    height: 300px;
-    background: url("/images/logo.svg") center/contain no-repeat;
+    img {
+      max-width: 200px;
+    }
+    // width: 700px;
+    // height: 300px;
+    // background: url("/images/logo.png") center/contain no-repeat;
   }
 
   // Bouton pour afficher le menu (uniquement mobile & tablette)
@@ -61,7 +65,7 @@ header {
 
     & li {
       padding: 0.5rem 1rem;
-      font-size: 24px;
+      font-size: 2rem;
       border-radius: 0.5rem;
       transition: ease-in-out 0.4s all;
     }
@@ -106,7 +110,7 @@ header {
 
       li {
         padding: 0.5rem 1rem;
-        font-size: 24px;
+        font-size: 2rem;
         border-radius: 0.5rem;
         transition: ease-in-out 0.4s all;
       }
