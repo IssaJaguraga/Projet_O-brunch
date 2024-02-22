@@ -73,7 +73,7 @@
 
             <li role="menuitem">
                 <a
-                    href="/allrestaurant"
+                    href="/restaurants"
                     class="nav-menu__link"
                     aria-label="Tous les restaurants"
                     on:click={hideMenu}

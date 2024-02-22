@@ -1,41 +1,81 @@
 <script>
   // Pour faire comme si on recevait des données au format JSON depuis le serveur,
   // on crée un tableau de données qui contient les données des espaces
-  const dataJson = [
-    // on a un premier espace
-    {
-      id: 1,
-      price: 100,
-      note: 25,
-    },
-    {
-      id: 2,
-      price: 150,
-      note: 25,
-    },
-    {
-      id: 3,
-
-      price: 100,
-      note: 25,
-    },
-    {
-      id: 4,
-      price: 100,
-      note: 25,
-    },
-  ];
+  import Card from "../components/Card.svelte";
+  import TitleSecondary from "../components/TitleSecondary.svelte";
 </script>
 
-<main class="ma">
-  <h1 class="Présentation">
-    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae
-    doloremque qui excepturi nesciunt consequuntur ut distinctio, sit sequi
-    eveniet corrupti, necessitatibus nemo maiores dolore odit eaque.
+<main>
+  <h1 class="featured-text">
+    Retrouvez ici les meilleurs restaurants pour bruncher, dans les plus grandes villes du monde.
   </h1>
 
-  <section class="restaurant" aria-label="Tous les restaurants">
-    <div class="moi">
+  <section class="restaurants" aria-label="Tous les restaurants">
+    <TitleSecondary title="Les meilleurs brunchs à Paris" />
+    <div class="card-list">
+      <Card
+        id={1}
+        note={4}
+        price={35}
+        title="Restaurant Paris"
+        image="/images/Paris/Brunch Paris1.jpg"
+      />
+      <Card
+        id={2}
+        note={5}
+        price={20}
+        title="Restaurant Paris"
+        image="/images/Paris/Brunch Paris2.jpg"
+      />
+      <Card
+        id={3}
+        note={3}
+        price={57}
+        title="Restaurant Paris"
+        image="/images/Paris/Brunch Paris3.jpg"
+      />
+      <Card
+        id={4}
+        note={4}
+        price={80}
+        title="Restaurant Paris"
+        image="/images/Paris/Brunch Paris4.jpeg"
+      />
+    </div>
+
+    <TitleSecondary title="Les meilleurs brunchs à Marrakech" />
+    <div class="card-list">
+      <Card
+        id={4}
+        note={4}
+        price={57}
+        title="Restaurant Marrakech"
+        image="/images/Marrakech/Brunch Marrakech1.jpg"
+      />
+      <Card
+        id={5}
+        note={5}
+        price={57}
+        title="Restaurant Marrakech"
+        image="/images/Marrakech/Brunch Marrakech2.jpg"
+      />
+      <Card
+        id={6}
+        note={3}
+        price={57}
+        title="Restaurant Marrakech"
+        image="/images/Marrakech/Brunch Marrakech3.jpg"
+      />
+      <Card
+        id={7}
+        note={4}
+        price={57}
+        title="Restaurant Marrakech"
+        image="/images/Marrakech/Brunch Marrakech4.jpg"
+      />
+    </div>
+
+      <!-- <div class="moi">
       <h2 class="title_restaurant">Les meuilleurs brunch de Dubaï</h2>
 
       <article class="theme-card">
@@ -844,6 +884,7 @@
         class="theme-card__button"
         aria-label="Accéder à l'espace restaurant"
       ></a>
-    </article>
+    </article> -->
+    <!-- </div> -->
   </section>
 </main>

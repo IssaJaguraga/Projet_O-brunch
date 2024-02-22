@@ -1,0 +1,23 @@
+@use "../utils/variables" as *;
+
+.home-search{
+    background-color: #FFBD59;
+    padding: 4rem;
+
+    &__form {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 1rem;
+
+        select {
+            padding: 1rem;
+            border-radius: 8px;
+            border: none;
+            background-color: $white-color;
+        }
+    }
+}
+
+.home-presentation {
+    margin-top: 5rem;
+}

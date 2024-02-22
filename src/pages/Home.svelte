@@ -1,164 +1,146 @@
 <script>
+  import Card from "../components/Card.svelte";
+  import TitleSecondary from "../components/TitleSecondary.svelte";
+  import Button from "../components/Button.svelte";
 </script>
 
 <main>
-  <section>
-    <form>
-      <select name="pets" id="pet-select">
-        <option value="">--Pays--</option>
-        <option value="">New York</option>
-        <option value="">Milan</option>
+  <section class="home-search">
+    <TitleSecondary
+      title="Recherchez votre prochain brunch préféré"
+      variant="white"
+    />
+    <form class="home-search__form">
+      <select name="continent" id="continent-select">
+        <option value="">Continent</option>
+        <option value="">Asie</option>
+        <option value="">Amérique</option>
+        <option value="">Europe</option>
+      </select>
+      <select name="country" id="country-select" disabled>
+        <option value="">Pays</option>
+      </select>
+      <select name="city" id="city-select" disabled>
+        <option value="">Ville</option>
       </select>
 
-      <div class="">
-        <input
+      <!-- <input
           type="text"
           name="nom"
           placeholder="Rechercher où bruncher..."
           value=""
           size="30"
-        />
+        /> -->
 
-        <button>Rechercher</button>
-      </div>
+      <Button>Rechercher</Button>
     </form>
   </section>
-  <div class="navbar" id="nav">
-    <div class="more">
-      <!--presentation de la page-->
+  <!--presentation de la page-->
+  <section class="home-presentation">
+    <p class="featured-text">
+      Bienvenue sur O'Brunch, le site qui vous permet de trouver les meilleurs
+      brunchs du monde entier. Vous pourrez découvrir les brunchs les mieux
+      notés, les plus abordables, les plus originaux, et bien d'autres encore.
+      Vous pourrez également partager vos propres expériences et noter les
+      brunchs que vous avez testés. Bonne recherche et bon appétit !
+    </p>
+  </section>
 
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, nulla
-        porro aliquid quisquam illo aut eum dolorum nam? Qui numquam cupiditate
-        eius voluptas recusandae omnis, rerum ipsa atque quidem. Ex assumenda
-        provident consequatur tempore saepe natus laboriosam magnam debitis
-        voluptates!
-      </p>
-
-      <!--Filtres-->
-
-      <article class="theme-card">
-        <h2>Restaurants à Paris</h2>
-        <div class="theme-card__informations">
-          <img
-            src="/images/Paris/Brunch Paris1.jpg"
-            alt="Restaurant brunch à Paris"
-          />
-          <span>Restaurant Paris</span>
-        </div>
-      </article>
-
-      <article class="theme-card">
-        <div class="theme-card__informations">
-          <img
-            src="/images/Paris/Brunch Paris2.jpg"
-            alt="Restaurant brunch à Paris"
-          />
-          <span>Restaurant Paris</span>
-        </div>
-      </article>
-
-      <article class="theme-card">
-        <button id="btn">voir plus</button>
-
-        <div class="theme-card__informations">
-          <img
-            src="/images/Paris/Brunch Paris3.jpg"
-            alt="Restaurant brunch à Paris"
-          />
-          <span>Restaurant Paris</span>
-        </div>
-      </article>
-
-      <article class="theme-card">
-        <h2>Restaurants à New York</h2>
-        <div class="theme-card__informations">
-          <img
-            src="/images/New York/Brunch New York1.jpg"
-            alt="Restaurant brunch à New York"
-          />
-          <span>Restaurant New York</span>
-        </div>
-      </article>
-
-      <article class="theme-card">
-        <div class="theme-card__informations">
-          <img
-            src="/images/New York/Brunch New York2.jpg"
-            alt="Restaurant brunch à New York"
-          />
-          <span>Restaurant New York</span>
-        </div>
-      </article>
-
-      <article class="theme-card">
-        <button id="btn">voir plus</button>
-        <div class="theme-card__informations">
-          <img
-            src="/images/New York/Brunch New York3.jpg"
-            alt="Restaurant brunch à New York"
-          />
-          <span>Restaurant New York</span>
-        </div>
-      </article>
-
-      <article class="theme-card">
-        <h2>Restaurants à Séoul</h2>
-        <div class="theme-card__informations">
-          <img
-            src="/images/Seoul/Brunch Séoul1.jpg"
-            alt="Restaurant brunch à Séoul"
-          /><span></span>
-          <span>Restaurant Séoul</span>
-        </div>
-      </article>
-
-      <article class="theme-card">
-        <div class="theme-card__informations">
-          <img
-            src="/images/Seoul/Brunch Séoul2.jpg"
-            alt="Restaurant brunch à Séoul"
-          />
-          <span>Restaurant Séoul</span>
-        </div>
-      </article>
-
-      <article class="theme-card">
-        <button id="btn">voir plus</button>
-
-        <div class="theme-card__informations">
-          <img
-            src="/images/Seoul/Brunch Séoul3.jpg"
-            alt="Restaurant brunch à Séoul"
-          />
-          <span>Restaurant Séoul</span>
-        </div>
-      </article>
-
-      <!--photos des restaurants avec boutons--
-            <div class="#">
-                <h2>Brunch à New York</h2>
-                
-                <button type="button" class="btn btn-secondary">voir plus</button>
-                
-                <img src="./public/images/New York/Brunch New York1.jpg" alt="Pancakes">
-                <img src="./public/images/New York/Brunch New York2.jpg" alt="assortiments de plats">
-                <img src="./public/images/New York/Brunch New York3.jpg" alt="Brunch avec tasse de café">
-            </div>
-
-
-
-            <div class="#">
-                <h2>Brunch à Paris</h2>
-                
-                <button type="button" class="btn btn-secondary">voir plus</button>
-                
-                <img src="./public/images/Paris/Brunch Paris1.jpg" alt="Waffle Brunch">
-                <img src="./public/images/Paris/Brunch Paris2.jpg" alt="Salmon Avocado Eggs Brunch">
-                <img src="./public/images/Paris/Brunch Paris3.jpg" alt="Fruits and Bacon Eggs Brunch">
-            </div>
-            </div>
-          -->
+  <!--Filtres-->
+  <section class="home-restaurants">
+    <TitleSecondary title="Brunchs à Paris" />
+    <div class="card-list">
+      <Card
+        id={1}
+        note={4}
+        price={35}
+        title="Restaurant Paris"
+        image="/images/Paris/Brunch Paris1.jpg"
+      />
+      <Card
+        id={2}
+        note={5}
+        price={20}
+        title="Restaurant Paris"
+        image="/images/Paris/Brunch Paris2.jpg"
+      />
+      <Card
+        id={3}
+        note={3}
+        price={57}
+        title="Restaurant Paris"
+        image="/images/Paris/Brunch Paris3.jpg"
+      />
+      <Card
+        id={4}
+        note={4}
+        price={80}
+        title="Restaurant Paris"
+        image="/images/Paris/Brunch Paris4.jpeg"
+      />
     </div>
-  </div>
+
+    <TitleSecondary title="Brunchs à New York" />
+    <div class="card-list">
+      <Card
+        id={4}
+        note={4}
+        price={57}
+        title="Restaurant New York"
+        image="/images/New York/Brunch New York1.jpg"
+      />
+      <Card
+        id={5}
+        note={5}
+        price={57}
+        title="Restaurant New York"
+        image="/images/New York/Brunch New York2.jpg"
+      />
+      <Card
+        id={6}
+        note={3}
+        price={57}
+        title="Restaurant New York"
+        image="/images/New York/Brunch New York3.jpg"
+      />
+      <Card
+        id={7}
+        note={4}
+        price={57}
+        title="Restaurant New York"
+        image="/images/New York/Brunch New York4.jpg"
+      />
+    </div>
+    <TitleSecondary title="Brunchs à Séoul" />
+    <div class="card-list">
+      <Card
+        id={7}
+        note={4}
+        price={57}
+        title="Restaurant Séoul"
+        image="/images/Seoul/Brunch Séoul1.jpg"
+      />
+      <Card
+        id={8}
+        note={5}
+        price={57}
+        title="Restaurant Séoul"
+        image="/images/Seoul/Brunch Séoul2.jpg"
+      />
+      <Card
+        id={9}
+        note={3}
+        price={57}
+        title="Restaurant Séoul"
+        image="/images/Seoul/Brunch Séoul3.jpg"
+      />
+      <Card
+        id={10}
+        note={4}
+        price={57}
+        title="Restaurant Séoul"
+        image="/images/Seoul/Brunch Séoul4.jpg"
+      />
+    </div>
+  </section>
 </main>
