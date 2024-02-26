@@ -6,6 +6,8 @@
   export let continents = [];
   export let countries = [];
 
+  
+
   const fetchCountriesFromContinents = async (continentId) => {
     fetch(`http://issajaguraga-server.eddi.cloud:8080/items/Country?filter[Continent_id][_eq]=${continentId}`)
       .then(response => response.json())
@@ -81,6 +83,7 @@
   <section class="home-restaurants">
     <TitleSecondary title="Brunchs à Paris" />
     <div class="card-list">
+      
       <Card
         id={1}
         note={4}
