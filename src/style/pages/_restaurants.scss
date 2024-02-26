@@ -1,2 +1,29 @@
 @use "../utils/variables" as *;
 @use "../utils/mixins";
+
+.search {
+    background-color: #ffbd59;
+    padding: 4rem;
+
+    &__form {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 1rem;
+
+        @media screen and (max-width: 768px) {
+            grid-template-columns: 2fr 2fr;
+        }
+
+        @media screen and (max-width: 576px) {
+            grid-template-columns: 1fr;
+        }
+
+        select {
+            padding: 1rem;
+            border-radius: 8px;
+            height: 40px;
+            border: none;
+            background-color: $white-color;
+        }
+    }
+}

@@ -31,8 +31,14 @@
    
   };
 
-  const fetchTownsFromVilles = async (townId) => {
-    fetch(`http://issajaguraga-server.eddi.cloud:8080/items/Town?filterTown_id][_eq]=${townId}`)
+  const handleCountrySelected = (event) => {
+    const countryId = event.currentTarget.value;
+    fetchTownsFromCountries(countryId);
+   
+  };
+
+  const fetchTownsFromCountries = async (countryId) => {
+    fetch(`http://issajaguraga-server.eddi.cloud:8080/items/Town?filter[Country_id][_eq]=${countryId}`)
       .then(response => response.json())
       .then(data => {
         towns = data.data;
@@ -52,7 +58,8 @@ const fetchTowns = async () => {
   
 
   fetchContinents();
-  fetchTowns();
+ 
+ 
  
 </script>
 
@@ -70,7 +77,7 @@ const fetchTowns = async () => {
         {/each}
       </select>
 
-      <select name="country" id="country-select" disabled={!countries.length} >
+      <select name="country" id="country-select" disabled={!countries.length} on:change={handleCountrySelected} >
         <option value="">--Pays--</option>
         {#each countries as country}
           <option value={country.id}>{country.name}</option>
@@ -92,7 +99,7 @@ const fetchTowns = async () => {
           size="30"
         /> -->
 
-      <Button disabled>Rechercher</Button>
+      <Button>Rechercher</Button>
       
     </form>
   </section>

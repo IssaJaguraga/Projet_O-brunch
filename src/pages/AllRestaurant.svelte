@@ -3,9 +3,109 @@
   // on crée un tableau de données qui contient les données des espaces
   import Card from "../components/Card.svelte";
   import TitleSecondary from "../components/TitleSecondary.svelte";
+
+  import Button from "../components/Button.svelte";
+
+  export let continents = [];
+  export let countries = [];
+  export let towns = [];
+
+  const fetchCountriesFromContinents = async (continentId) => {
+    fetch(`http://issajaguraga-server.eddi.cloud:8080/items/Country?filter[Continent_id][_eq]=${continentId}`)
+      .then(response => response.json())
+      .then(data => {
+        countries = data.data;
+      });
+  };
+
+  const fetchContinents = async () => {
+    const response = await fetch('http://issajaguraga-server.eddi.cloud:8080/items/Continent/');
+
+    if (response.ok) {
+      const data = await response.json();
+      console.log(data);
+      continents = data.data;
+    }
+  };
+
+  const handleContinentSelected = (event) => {
+    const continentId = event.currentTarget.value;
+    fetchCountriesFromContinents(continentId);
+   
+  };
+
+  const handleCountrySelected = (event) => {
+    const countryId = event.currentTarget.value;
+    fetchTownsFromCountries(countryId);
+   
+  };
+
+  const fetchTownsFromCountries = async (countryId) => {
+    fetch(`http://issajaguraga-server.eddi.cloud:8080/items/Town?filter[Country_id][_eq]=${countryId}`)
+      .then(response => response.json())
+      .then(data => {
+        towns = data.data;
+      });
+  }
+  
+const fetchTowns = async () => {
+    const response = await fetch('http://issajaguraga-server.eddi.cloud:8080/items/Town/');
+
+    if (response.ok) {
+      const data = await response.json();
+      console.log(data);
+      towns = data.data;
+    }
+  };
+  
+  
+
+  fetchContinents();
+ 
 </script>
 
+
 <main>
+
+  <section class="search">
+    <TitleSecondary
+      title="Recherchez votre prochain brunch préféré"
+      variant="white"
+    />
+    <form class="home-search__form">
+      <select name="continent" id="continent-select" disabled={!continents.length} on:change={handleContinentSelected}>
+        <option value="">Continent</option>
+        {#each continents as continent}
+          <option value={continent.id}>{continent.name}</option>
+        {/each}
+      </select>
+
+      <select name="country" id="country-select" disabled={!countries.length} on:change={handleCountrySelected} >
+        <option value="">--Pays--</option>
+        {#each countries as country}
+          <option value={country.id}>{country.name}</option>
+        {/each}
+      </select>
+
+      <select name="city" id="city-select" disabled={!towns.length} >
+        <option value="">--Ville--</option>
+        {#each towns as town}
+          <option value={town.id}>{town.name}</option>
+        {/each}
+      </select>
+
+      <!-- <input
+          type="text"
+          name="nom"
+          placeholder="Rechercher où bruncher..."
+          value=""
+          size="30"
+        /> -->
+
+      <Button>Rechercher</Button>
+      
+    </form>
+  </section>
   <h1 class="featured-text">
     Retrouvez ici les meilleurs restaurants pour bruncher, dans les plus grandes villes du monde.
   </h1>
@@ -17,29 +117,36 @@
         id={1}
         note={4}
         price={35}
-        title="Restaurant Paris"
+        title="Restaurant La Turca"
         image="/images/Paris/Brunch Paris1.jpg"
       />
       <Card
         id={2}
         note={5}
         price={20}
-        title="Restaurant Paris"
+        title="Restaurant Nara"
         image="/images/Paris/Brunch Paris2.jpg"
       />
       <Card
         id={3}
         note={3}
         price={57}
-        title="Restaurant Paris"
+        title="Restaurant Safran"
         image="/images/Paris/Brunch Paris3.jpg"
       />
       <Card
         id={4}
         note={4}
         price={80}
-        title="Restaurant Paris"
+        title="Restaurant Mina's"
         image="/images/Paris/Brunch Paris4.jpeg"
+      />
+      <Card
+        id={4}
+        note={4}
+        price={80}
+        title="Restaurant Musk"
+        image="/images/Paris/Brunch Paris5.jpg"
       />
     </div>
 
@@ -73,818 +180,311 @@
         title="Restaurant Marrakech"
         image="/images/Marrakech/Brunch Marrakech4.jpg"
       />
-    </div>
-
-      <!-- <div class="moi">
-      <h2 class="title_restaurant">Les meuilleurs brunch de Dubaï</h2>
-
-      <article class="theme-card">
-        <div class="theme-card__informations">
-          <img class="pictures" src="/images/Dubai/Brunch Dubai1.jpg" alt="" />
+      <Card
+        id={7}
+        note={4}
+        price={57}
+        title="Restaurant Marrakech"
+        image="/images/Marrakech/Brunch Marrakech5.jpg"
+      />
+      </div>
+     <TitleSecondary title="Les meuilleurs brunch de Dubaï" />
+    <div class="card-list">
+      <Card
+        id={7}
+        note={4}
+        price={57}
+        title="Restaurant Nara"
+        image="/images/Dubai/Brunch Dubai1.jpg"
+      />
+      <Card
+        id={7}
+        note={4}
+        price={57}
+        title="Restaurant Nara"
+        image="/images/Dubai/Brunch Dubai2.jpg"
+      />
+      <Card
+        id={7}
+        note={4}
+        price={57}
+        title="Restaurant Nara"
+        image="/images/Dubai/Brunch Dubai3.jpg"
+      />
+      <Card
+        id={7}
+        note={4}
+        price={57}
+        title="Restaurant Nara"
+        image="/images/Dubai/Brunch Dubai4.jpg"
+      />
+      <Card
+        id={7}
+        note={4}
+        price={57}
+        title="Restaurant Nara"
+        image="/images/Dubai/Brunch Dubai5.jpg"
+      />
+      </div>
+    <TitleSecondary title="Les meilleurs brunch de New york" />
+    <div class="card-list">
+      <Card
+        id={4}
+        note={4}
+        price={57}
+        title="Restaurant La Turca"
+        image="/images/New York/Brunch New York1.jpg"
+      />
+      <Card
+        id={5}
+        note={5}
+        price={57}
+        title="Restaurant Safran"
+        image="/images/New York/Brunch New York2.jpg"
+      />
+      <Card
+        id={6}
+        note={3}
+        price={57}
+        title="Restaurant Mina's"
+        image="/images/New York/Brunch New York3.jpg"
+        />
+       <Card
+        id={7}
+        note={4}
+        price={57}
+        title="Restaurant Musk"
+        image="/images/New York/Brunch New York4.jpg"
+      />
+      </div> 
+    <TitleSecondary title="Les meilleurs brunch de Milan" />
+    <div class="card-list">
+        <Card
+          id={4}
+          note={4}
+          price={57}
+          title="Restaurant La Turca"
+          image="/images/Milan/Brunch Milan1.jpg"
+        />
+        <Card
+          id={5}
+          note={5}
+          price={57}
+          title="Restaurant Nara"
+          image="/images/Milan/Brunch Milan2.jpg"
+        />
+        <Card
+          id={6}
+          note={3}
+          price={57}
+          title="Restaurant Safran"
+          image="/images/Milan/Brunch Milan3.jpg"
+        />
+        <Card
+          id={7}
+          note={4}
+          price={57}
+          title="Restaurant Mina's"
+          image="/images/Milan/Brunch Milan4.jpg"
+        />
+        <Card
+          id={7}
+          note={4}
+          price={57}
+          title="Restaurant Musk"
+          image="/images/Milan/Brunch Milan5.jpg"
+        />
         </div>
-        <span>Restaurant Nara 149 Avis Clients<br />Prix moyen 36&#8364</span>
+      <TitleSecondary title="Les meilleurs brunch de Suva" />
+      <div class="card-list">
+          <Card
+            id={4}
+            note={4}
+            price={57}
+            title="Restaurant La Turca"
+            image="/images/Suva/Brunch Suva1.jpeg"
+          />
+          <Card
+            id={5}
+            note={5}
+            price={57}
+            title="Restaurant Nara"
+            image="/images/Suva/Brunch Suva2.jpg"
+          />
+          <Card
+            id={6}
+            note={3}
+            price={57}
+            title="Restaurant Safran"
+            image="/images/Suva/Brunch Suva3.jpg"
+          />
+          <Card
+            id={7}
+            note={4}
+            price={57}
+            title="Restaurant Mina's"
+            image="/images/Suva/Brunch Suva4.jpg"
+          />
+          </div>
+        <TitleSecondary title="Les meilleurs brunch d'Abidjan" />
+        <div class="card-list">
+          <Card
+            id={4}
+            note={4}
+            price={57}
+            title="Restaurant La Turca"
+            image="/images/Abidjan/Brunch Abidjan1.jpg"
+          />
+          <Card
+            id={5}
+            note={5}
+            price={57}
+            title="Restaurant Nara"
+            image="/images/Abidjan/Brunch Abidjan2.jpg"
+          />
+          <Card
+            id={6}
+            note={3}
+            price={57}
+            title="Restaurant Safran"
+            image="/images/Abidjan/Brunch Abidjan3.jpg"
+          />
+          <Card
+            id={7}
+            note={4}
+            price={57}
+            title="Restaurant Mina's"
+            image="/images/Abidjan/Brunch Abidjan4.jpg"
+          />
+          <Card
+            id={7}
+            note={4}
+            price={57}
+            title="Restaurant Mina's"
+            image="/images/Abidjan/Brunch Abidjan5.jpg"
+          />
+          </div>
+        <TitleSecondary title="Les meilleurs brunch à Bogota" />
+        <div class="card-list">
+          <Card
+            id={4}
+            note={4}
+            price={57}
+            title="Restaurant La Turca"
+            image="/images/Bogota/Brunch Bogota1.jpg"
+          />
+          <Card
+            id={5}
+            note={5}
+            price={57}
+            title="Restaurant Nara"
+            image="/images/Bogota/Brunch Bogota2.jpg"
+          />
+          <Card
+            id={6}
+            note={3}
+            price={57}
+            title="Restaurant Safran"
+            image="/images/Bogota/Brunch Bogota3.jpg"
+          />
+          <Card
+            id={7}
+            note={4}
+            price={57}
+            title="Restaurant Mina's"
+            image="/images/Bogota/Brunch Bogota4.jpg"
+          />
+          <Card
+            id={7}
+            note={4}
+            price={57}
+            title="Restaurant Mina's"
+            image="/images/Bogota/Brunch Bogota5.jpg"
+          />
+          </div>
+        <TitleSecondary title="Les meilleurs brunch de Séoul" />
+        <div class="card-list">
+          <Card
+            id={4}
+            note={4}
+            price={57}
+            title="Restaurant La Turca"
+            image="/images/Seoul/Brunch Séoul1.jpg"
+          />
+          <Card
+            id={5}
+            note={5}
+            price={57}
+            title="Restaurant Nara"
+            image="/images/Seoul/Brunch Séoul2.jpg"
+          />
+          <Card
+            id={6}
+            note={3}
+            price={57}
+            title="Restaurant Safran"
+            image="/images/Seoul/Brunch Séoul3.jpg"
+          />
+          <Card
+            id={7}
+            note={4}
+            price={57}
+            title="Restaurant Mina's"
+            image="/images/Seoul/Brunch Séoul4.jpg"
+          />
+          <Card
+            id={7}
+            note={4}
+            price={57}
+            title="Restaurant Mina's"
+            image="/images/Seoul/Brunch Séoul5.jpg"
+          />
+          </div>
+        <TitleSecondary title="Les meilleurs brunch à Sydney" />
+        <div class="card-list">
+          <Card
+            id={4}
+            note={4}
+            price={57}
+            title="Restaurant La Turca"
+            image="/images/Sydney/Brunch Sydney1.png"
+          />
+          <Card
+            id={5}
+            note={5}
+            price={57}
+            title="Restaurant Nara"
+            image="/images/Sydney/Brunch Sydney2.png"
+          />
+          <Card
+            id={6}
+            note={3}
+            price={57}
+            title="Restaurant Safran"
+            image="/images/Sydney/Brunch Sydney3.jpg"
+          />
+          <Card
+            id={7}
+            note={4}
+            price={57}
+            title="Restaurant Mina's"
+            image="/images/Sydney/Brunch Sydney4.jpg"
+          />
+          <Card
+            id={7}
+            note={4}
+            price={57}
+            title="Restaurant Mina's"
+            image="/images/Sydney/Brunch Sydney5.jpg"
+          />
+          <Card
+            id={7}
+            note={4}
+            price={57}
+            title="Restaurant Mina's"
+            image="/images/Sydney/Brunch Sydney6.jpg"
+          />
+          </div>
 
-        <a
-          href="/#"
-          class="theme-card__button"
-          aria-label="Accéder à l'espace restaurant"
-        ></a>
-      </article>
-
-      <article class="theme-card">
-        <div class="theme-card__informations">
-          <img src="/images/Dubai/Brunch Dubai2.jpg" alt="" />
-          <span>Restaurant Safran 89 Avis Clients<br />Prix moyen 20&#8364</span
-          >
-        </div>
-        <a
-          href="/#"
-          class="theme-card__button"
-          aria-label="Accéder à l'espace restaurant"
-        ></a>
-      </article>
-
-      <article class="theme-card">
-        <div class="theme-card__informations">
-          <img src="/images/Dubai/Brunch Dubai3.jpg" alt="" />
-          <span>Restaurant Mina's 73 Avis Clients<br />Prix moyen 30&#8364</span
-          >
-        </div>
-        <a
-          href="/#"
-          class="theme-card__button"
-          aria-label="Accéder à l'espace restaurant"
-        ></a>
-      </article>
-
-      <article class="theme-card">
-        <div class="theme-card__informations">
-          <img src="/images/Dubai/Brunch Dubai4.jpg" alt="" />
-          <span>Restaurant Musk 221 Avis Clients<br />Prix moyen 25&#8364</span>
-        </div>
-        <a
-          href="/#"
-          class="theme-card__button"
-          aria-label="Accéder à l'espace restaurant"
-        ></a>
-      </article>
-
-      <article class="theme-card">
-        <div class="theme-card__informations">
-          <img src="/images/Dubai/Brunch Dubai5.jpg" alt="" />
-          <span
-            >Restaurant La Turca 188 Avis Clients<br />Prix moyen 39&#8364</span
-          >
-        </div>
-        <a
-          href="/#"
-          class="theme-card__button"
-          aria-label="Accéder à l'espace restaurant"
-        ></a>
-      </article>
-    </div>
-    <h2>Les meilleurs brunch de New york</h2>
-    <article class="theme-card">
-      <div class="theme-card__informations">
-        <img src="/images/New York/Brunch New York1.jpg" alt="" />
-        <span>Restaurant Nara 169 Avis Clients<br />Prix moyen 39&#8364</span>
-      </div>
-      <a
-        href="/#"
-        class="theme-card__button"
-        aria-label="Accéder à l'espace restaurant"
-      ></a>
-    </article>
-
-    <article class="theme-card">
-      <div class="theme-card__informations">
-        <ul>
-          <li>
-            <img src="/images/New York/Brunch New York2.jpg" alt="" /><span
-            ></span>
-          </li>
-        </ul>
-        <span>Restaurant Safran 69 Avis Clients<br />Prix moyen 31&#8364</span>
-      </div>
-      <a
-        href="/#"
-        class="theme-card__button"
-        aria-label="Accéder à l'espace restaurant"
-      ></a>
-    </article>
-
-    <article class="theme-card">
-      <div class="theme-card__informations">
-        <ul>
-          <li>
-            <img src="/images/New York/Brunch New York3.jpg" alt="" /><span
-            ></span>
-          </li>
-        </ul>
-        <span>Restaurant Mina's 349 Avis Clients<br />Prix moyen 56&#8364</span>
-      </div>
-      <a
-        href="/#"
-        class="theme-card__button"
-        aria-label="Accéder à l'espace restaurant"
-      ></a>
-    </article>
-
-    <article class="theme-card">
-      <div class="theme-card__informations">
-        <ul>
-          <li>
-            <img src="/images/New York/Brunch New York4.jpg" alt="" /><span
-            ></span>
-          </li>
-        </ul>
-        <span>Restaurant Musk 349 Avis Clients<br />Prix moyen 56&#8364</span>
-      </div>
-      <a
-        href="/#"
-        class="theme-card__button"
-        aria-label="Accéder à l'espace restaurant"
-      ></a>
-    </article>
-
-    <h2>Les meilleurs brunch de Marrakech</h2>
-    <article class="theme-card">
-      <div class="theme-card__informations">
-        <ul>
-          <li>
-            <img src="/images/Marrakech/Brunch Marrakech1.jpg" alt="" /><span
-            ></span>
-          </li>
-        </ul>
-        <span
-          >Restaurant La Turca 229 Avis Clients<br />Prix moyen 39&#8364</span
-        >
-      </div>
-      <a
-        href="/#"
-        class="theme-card__button"
-        aria-label="Accéder à l'espace restaurant"
-      ></a>
-    </article>
-
-    <article class="theme-card">
-      <div class="theme-card__informations">
-        <ul>
-          <li>
-            <img src="/images/Marrakech/Brunch Marrakech2.jpg" alt="" /><span
-            ></span>
-          </li>
-        </ul>
-        <span>Restaurant Nara 179 Avis Clients<br />Prix moyen 26&#8364</span>
-      </div>
-      <a
-        href="/#"
-        class="theme-card__button"
-        aria-label="Accéder à l'espace restaurant"
-      ></a>
-    </article>
-
-    <article class="theme-card">
-      <div class="theme-card__informations">
-        <ul>
-          <li>
-            <img src="/images/Marrakech/Brunch Marrakech3.jpg" alt="" /><span
-            ></span>
-          </li>
-        </ul>
-        <span>Restaurant safran 149 Avis Clients<br />Prix moyen 36&#8364</span>
-      </div>
-      <a
-        href="/#"
-        class="theme-card__button"
-        aria-label="Accéder à l'espace restaurant"
-      ></a>
-    </article>
-
-    <article class="theme-card">
-      <div class="theme-card__informations">
-        <ul>
-          <li>
-            <img src="/images/Marrakech/Brunch Marrakech4.jpg" alt="" /><span
-            ></span>
-          </li>
-        </ul>
-        <span>Restaurant Mina's 189 Avis Clients<br />Prix moyen 56&#8364</span>
-      </div>
-      <a
-        href="/#"
-        class="theme-card__button"
-        aria-label="Accéder à l'espace restaurant"
-      ></a>
-    </article>
-
-    <article class="theme-card">
-      <div class="theme-card__informations">
-        <ul>
-          <li>
-            <img src="/images/Marrakech/Brunch Marrakech5.jpg" alt="" /><span
-            ></span>
-          </li>
-        </ul>
-        <span>Restaurant Musk 349 Avis Clients<br />Prix moyen 46&#8364</span>
-      </div>
-      <a
-        href="/#"
-        class="theme-card__button"
-        aria-label="Accéder à l'espace restaurant"
-      ></a>
-    </article>
-
-    <h2>Les meilleurs brunch de Milan</h2>
-    <article class="theme-card">
-      <div class="theme-card__informations">
-        <ul>
-          <li>
-            <img src="/images/Milan/Brunch Milan1.jpg" alt="" /><span></span>
-          </li>
-        </ul>
-        <span
-          >Restaurant La Turca 189 Avis Clients<br />Prix moyen 56&#8364</span
-        >
-      </div>
-      <a
-        href="/#"
-        class="theme-card__button"
-        aria-label="Accéder à l'espace restaurant"
-      ></a>
-    </article>
-
-    <article class="theme-card">
-      <div class="theme-card__informations">
-        <ul>
-          <li>
-            <img src="/images/Milan/Brunch Milan2.jpg" alt="" /><span></span>
-          </li>
-        </ul>
-        <span>Restaurant Nara 149 Avis Clients<br />Prix moyen 36&#8364</span>
-      </div>
-      <a
-        href="/#"
-        class="theme-card__button"
-        aria-label="Accéder à l'espace restaurant"
-      ></a>
-    </article>
-
-    <article class="theme-card">
-      <div class="theme-card__informations">
-        <ul>
-          <li>
-            <img src="/images/Milan/Brunch Milan3.jpg" alt="" /><span></span>
-          </li>
-        </ul>
-        <span>Restaurant safran 249 Avis Clients<br />Prix moyen 46&#8364</span>
-      </div>
-      <a
-        href="/#"
-        class="theme-card__button"
-        aria-label="Accéder à l'espace restaurant"
-      ></a>
-    </article>
-
-    <article class="theme-card">
-      <div class="theme-card__informations">
-        <ul>
-          <li>
-            <img src="/images/Milan/Brunch Milan4.jpg" alt="" /><span></span>
-          </li>
-        </ul>
-        <span>Restaurant Mina's 49 Avis Clients<br />Prix moyen 56&#8364</span>
-      </div>
-      <a
-        href="/#"
-        class="theme-card__button"
-        aria-label="Accéder à l'espace restaurant"
-      ></a>
-    </article>
-
-    <article class="theme-card">
-      <div class="theme-card__informations">
-        <ul>
-          <li>
-            <img src="/images/Milan/Brunch Milan5.jpg" alt="" /><span></span>
-          </li>
-        </ul>
-        <span>Restaurant Musk 64 Avis Clients<br />Prix moyen 36&#8364</span>
-      </div>
-      <a
-        href="/#"
-        class="theme-card__button"
-        aria-label="Accéder à l'espace restaurant"
-      ></a>
-    </article>
-
-    <h2>Les meilleurs brunch de Paris</h2>
-    <article class="theme-card">
-      <div class="theme-card__informations">
-        <ul>
-          <li>
-            <img src="/images/Paris/Brunch Paris1.jpg" alt="" /><span></span>
-          </li>
-        </ul>
-        <span
-          >Restaurant La Turca 149 Avis Clients<br />Prix moyen 36&#8364</span
-        >
-      </div>
-      <a
-        href="/#"
-        class="theme-card__button"
-        aria-label="Accéder à l'espace restaurant"
-      ></a>
-    </article>
-
-    <article class="theme-card">
-      <div class="theme-card__informations">
-        <ul>
-          <li>
-            <img src="/images/Paris/Brunch Paris2.jpg" alt="" /><span></span>
-          </li>
-        </ul>
-        <span>Restaurant Nara 149 Avis Clients<br />Prix moyen 56&#8364</span>
-      </div>
-      <a
-        href="/#"
-        class="theme-card__button"
-        aria-label="Accéder à l'espace restaurant"
-      ></a>
-    </article>
-
-    <article class="theme-card">
-      <div class="theme-card__informations">
-        <ul>
-          <li>
-            <img src="/images/Paris/Brunch Paris3.jpg" alt="" /><span></span>
-          </li>
-        </ul>
-        <span>Restaurant Safran 249 Avis Clients<br />Prix moyen 56&#8364</span>
-      </div>
-      <a
-        href="/#"
-        class="theme-card__button"
-        aria-label="Accéder à l'espace restaurant"
-      ></a>
-    </article>
-
-    <article class="theme-card">
-      <div class="theme-card__informations">
-        <ul>
-          <li>
-            <img src="/images/Paris/Brunch Paris4.jpeg" alt="" /><span></span>
-          </li>
-        </ul>
-        <span>Restaurant Mina's 49 Avis Clients<br />Prix moyen 46&#8364</span>
-      </div>
-      <a
-        href="/#"
-        class="theme-card__button"
-        aria-label="Accéder à l'espace restaurant"
-      ></a>
-    </article>
-
-    <article class="theme-card">
-      <div class="theme-card__informations">
-        <ul>
-          <li>
-            <img src="/images/Paris/Brunch Paris5.jpg" alt="" /><span></span>
-          </li>
-        </ul>
-        <span>Restaurant Musk 349 Avis Clients<br />Prix moyen 67&#8364</span>
-      </div>
-      <a
-        href="/#"
-        class="theme-card__button"
-        aria-label="Accéder à l'espace restaurant"
-      ></a>
-    </article>
-
-    <h2>Les meilleurs brunch de Suva</h2>
-    <article class="theme-card">
-      <div class="theme-card__informations">
-        <ul>
-          <li>
-            <img src="/images/Suva/Brunch Suva1.jpeg" alt="" /><span></span>
-          </li>
-        </ul>
-        <span
-          >Restaurant La Turca 249 Avis Clients<br />Prix moyen 56&#8364</span
-        >
-      </div>
-      <a
-        href="/#"
-        class="theme-card__button"
-        aria-label="Accéder à l'espace restaurant"
-      ></a>
-    </article>
-
-    <article class="theme-card">
-      <div class="theme-card__informations">
-        <ul>
-          <li>
-            <img src="/images/Suva/Brunch Suva2.jpg" alt="" /><span></span>
-          </li>
-        </ul>
-        <span>Restaurant Nara 149 Avis Clients<br />Prix moyen 36&#8364</span>
-      </div>
-      <a
-        href="/#"
-        class="theme-card__button"
-        aria-label="Accéder à l'espace restaurant"
-      ></a>
-    </article>
-
-    <article class="theme-card">
-      <div class="theme-card__informations">
-        <ul>
-          <li>
-            <img src="/images/Suva/Brunch Suva3.jpg" alt="" /><span></span>
-          </li>
-        </ul>
-        <span>Restaurant Safran 49 Avis Clients<br />Prix moyen 46&#8364</span>
-      </div>
-      <a
-        href="/#"
-        class="theme-card__button"
-        aria-label="Accéder à l'espace restaurant"
-      ></a>
-    </article>
-
-    <article class="theme-card">
-      <div class="theme-card__informations">
-        <ul>
-          <li>
-            <img src="/images/Suva/Brunch Suva4.jpg" alt="" /><span></span>
-          </li>
-        </ul>
-        <span>Restaurant Mina's 119 Avis Clients<br />Prix moyen 36&#8364</span>
-      </div>
-      <a
-        href="/#"
-        class="theme-card__button"
-        aria-label="Accéder à l'espace restaurant"
-      ></a>
-    </article>
-
-    <h2>Les meilleurs brunch d'Abidjan</h2>
-    <article class="theme-card">
-      <div class="theme-card__informations">
-        <ul>
-          <li>
-            <img src="/images/Abidjan/Brunch Abidjan1.jpg" alt="" /><span
-            ></span>
-          </li>
-        </ul>
-        <span
-          >Restaurant Mina's Musk 55 Avis Clients<br />Prix moyen 37&#8364</span
-        >
-      </div>
-      <a
-        href="/#"
-        class="theme-card__button"
-        aria-label="Accéder à l'espace restaurant"
-      ></a>
-    </article>
-
-    <article class="theme-card">
-      <div class="theme-card__informations">
-        <ul>
-          <li>
-            <img src="/images/Abidjan/Brunch Abidjan2.jpg" alt="" /><span
-            ></span>
-          </li>
-        </ul>
-        <span
-          >Restaurant Mina's Musk 155 Avis Clients<br />Prix moyen 47&#8364</span
-        >
-      </div>
-      <a
-        href="/#"
-        class="theme-card__button"
-        aria-label="Accéder à l'espace restaurant"
-      ></a>
-    </article>
-
-    <article class="theme-card">
-      <div class="theme-card__informations">
-        <ul>
-          <li>
-            <img src="/images/Abidjan/Brunch Abidjan3.jpg" alt="" /><span
-            ></span>
-          </li>
-        </ul>
-        <span
-          >Restaurant Nara Musk 45 Avis Clients<br />Prix moyen 27&#8364</span
-        >
-      </div>
-      <a
-        href="/#"
-        class="theme-card__button"
-        aria-label="Accéder à l'espace restaurant"
-      ></a>
-    </article>
-
-    <article class="theme-card">
-      <div class="theme-card__informations">
-        <ul>
-          <li>
-            <img src="/images/Abidjan/Brunch Abidjan4.jpg" alt="" /><span
-            ></span>
-          </li>
-        </ul>
-        <span>Restaurant Safran 145 Avis Clients<br />Prix moyen 66&#8364</span>
-      </div>
-      <a
-        href="/#"
-        class="theme-card__button"
-        aria-label="Accéder à l'espace restaurant"
-      ></a>
-    </article>
-
-    <article class="theme-card">
-      <div class="theme-card__informations">
-        <ul>
-          <li>
-            <img src="/images/Abidjan/Brunch Abidjan5.jpg" alt="" /><span
-            ></span>
-          </li>
-        </ul>
-        <span
-          >Restaurant Mina's 245 Avis Clients<br />Prix moyen 46&#8364
-        </span>
-      </div>
-      <a
-        href="/#"
-        class="theme-card__button"
-        aria-label="Accéder à l'espace restaurant"
-      ></a>
-    </article>
-
-    <h2>Les meilleurs brunch de Bogota</h2>
-    <article class="theme-card">
-      <div class="theme-card__informations">
-        <ul>
-          <li>
-            <img src="/images/Bogota/Brunch Bogota1.jpg" alt="" /><span></span>
-          </li>
-        </ul>
-        <span>Restaurant Musk 205 Avis Clients<br />Prix moyen 26&#8364</span>
-      </div>
-      <a
-        href="/#"
-        class="theme-card__button"
-        aria-label="Accéder à l'espace restaurant"
-      ></a>
-    </article>
-
-    <article class="theme-card">
-      <div class="theme-card__informations">
-        <ul>
-          <li>
-            <img src="/images/Bogota/Brunch Bogota2.jpg" alt="" /><span></span>
-          </li>
-        </ul>
-        <span
-          >Restaurant La Turca 205 Avis Clients<br />Prix moyen 34&#8364</span
-        >
-      </div>
-      <a
-        href="/#"
-        class="theme-card__button"
-        aria-label="Accéder à l'espace restaurant"
-      ></a>
-    </article>
-
-    <article class="theme-card">
-      <div class="theme-card__informations">
-        <ul>
-          <li>
-            <img src="/images/Bogota/Brunch Bogota3.jpg" alt="" /><span></span>
-          </li>
-        </ul>
-        <span>Restaurant Nara 45 Avis Clients<br />Prix moyen 16&#8364</span>
-      </div>
-      <a
-        href="/#"
-        class="theme-card__button"
-        aria-label="Accéder à l'espace restaurant"
-      ></a>
-    </article>
-
-    <article class="theme-card">
-      <div class="theme-card__informations">
-        <ul>
-          <li>
-            <img src="/images/Bogota/Brunch Bogota4.jpg" alt="" /><span></span>
-          </li>
-        </ul>
-        <span>Restaurant Safran 45 Avis Clients<br />Prix moyen 26&#8364</span>
-      </div>
-      <a
-        href="/#"
-        class="theme-card__button"
-        aria-label="Accéder à l'espace restaurant"
-      ></a>
-    </article>
-
-    <article class="theme-card">
-      <div class="theme-card__informations">
-        <ul>
-          <li>
-            <img src="/images/Bogota/Brunch Bogota5.jpg" alt="" /><span></span>
-          </li>
-        </ul>
-        <span>Restaurant Mina's 45 Avis Clients<br />Prix moyen 36&#8364</span>
-      </div>
-      <a
-        href="/#"
-        class="theme-card__button"
-        aria-label="Accéder à l'espace restaurant"
-      ></a>
-    </article>
-
-    <h2>Les meilleurs brunch de Séoul</h2>
-    <article class="theme-card">
-      <div class="theme-card__informations">
-        <ul>
-          <li>
-            <img src="/images/Seoul/Brunch Séoul1.jpg" alt="" /><span></span>
-          </li>
-        </ul>
-        <span>Restaurant Musk 45 Avis Clients<br />Prix moyen 40&#8364</span>
-      </div>
-      <a
-        href="/#"
-        class="theme-card__button"
-        aria-label="Accéder à l'espace restaurant"
-      ></a>
-    </article>
-
-    <article class="theme-card">
-      <div class="theme-card__informations">
-        <ul>
-          <li>
-            <img src="/images/Seoul/Brunch Séoul2.jpg" alt="" /><span></span>
-          </li>
-        </ul>
-        <span>Restaurant La Turca 45 Avis Clients<br />Prix moyen 40&#8364</span
-        >
-      </div>
-      <a
-        href="/#"
-        class="theme-card__button"
-        aria-label="Accéder à l'espace restaurant"
-      ></a>
-    </article>
-
-    <article class="theme-card">
-      <div class="theme-card__informations">
-        <ul>
-          <li>
-            <img src="/images/Seoul/Brunch Séoul3.jpg" alt="" /><span></span>
-          </li>
-        </ul>
-        <span>Restaurant Nara 85 Avis Clients<br />Prix moyen 47&#8364</span>
-      </div>
-      <a
-        href="/#"
-        class="theme-card__button"
-        aria-label="Accéder à l'espace restaurant"
-      ></a>
-    </article>
-
-    <article class="theme-card">
-      <div class="theme-card__informations">
-        <ul>
-          <li>
-            <img src="/images/Seoul/Brunch Séoul4.jpg" alt="" /><span></span>
-          </li>
-        </ul>
-        <span>Restaurant Safran 85 Avis Clients<br />Prix moyen 47&#8364</span>
-      </div>
-      <a
-        href="/#"
-        class="theme-card__button"
-        aria-label="Accéder à l'espace restaurant"
-      ></a>
-    </article>
-
-    <article class="theme-card">
-      <div class="theme-card__informations">
-        <ul>
-          <li>
-            <img src="/images/Seoul/Brunch Séoul5.jpg" alt="" /><span></span>
-          </li>
-        </ul>
-        <span>Restaurant Mina's 185 Avis Clients<br />Prix moyen 37&#8364</span>
-      </div>
-      <a
-        href="/#"
-        class="theme-card__button"
-        aria-label="Accéder à l'espace restaurant"
-      ></a>
-    </article>
-
-    <h2>Les meilleurs brunch de Sydney</h2>
-    <article class="theme-card">
-      <div class="theme-card__informations">
-        <ul>
-          <li>
-            <img src="/images/Sydney/Brunch Sydney1.png" alt="" /><span></span>
-          </li>
-        </ul>
-        <span>Restaurant Musk 65 Avis Clients<br />Prix moyen 37&#8364</span>
-      </div>
-      <a
-        href="/#"
-        class="theme-card__button"
-        aria-label="Accéder à l'espace restaurant"
-      ></a>
-    </article>
-
-    <article class="theme-card">
-      <div class="theme-card__informations">
-        <ul>
-          <li>
-            <img src="/images/Sydney/Brunch Sydney2.png" alt="" /><span></span>
-          </li>
-        </ul>
-        <span
-          >Restaurant La Turca 185 Avis Clients<br />Prix moyen 27&#8364</span
-        >
-      </div>
-      <a
-        href="/#"
-        class="theme-card__button"
-        aria-label="Accéder à l'espace restaurant"
-      ></a>
-    </article>
-
-    <article class="theme-card">
-      <div class="theme-card__informations">
-        <ul>
-          <li>
-            <img src="/images/Sydney/Brunch Sydney3.jpg" alt="" /><span></span>
-          </li>
-        </ul>
-        <span>Restaurant Nara 805 Avis Clients<br />Prix moyen 47&#8364</span>
-      </div>
-      <a
-        href="/#"
-        class="theme-card__button"
-        aria-label="Accéder à l'espace restaurant"
-      ></a>
-    </article>
-
-    <article class="theme-card">
-      <div class="theme-card__informations">
-        <ul>
-          <li>
-            <img src="/images/Sydney/Brunch Sydney4.jpg" alt="" /><span></span>
-          </li>
-        </ul>
-        <span>Restaurant safran 85 Avis Clients<br />Prix moyen 47&#8364</span>
-      </div>
-      <a
-        href="/#"
-        class="theme-card__button"
-        aria-label="Accéder à l'espace restaurant"
-      ></a>
-    </article>
-
-    <article class="theme-card">
-      <div class="theme-card__informations">
-        <ul>
-          <li>
-            <img src="/images/Sydney/Brunch Sydney5.jpg" alt="" /><span></span>
-          </li>
-        </ul>
-        <span>Restaurant Mina's 76 Avis Clients<br />Prix moyen 17&#8364</span>
-      </div>
-      <a
-        href="/#"
-        class="theme-card__button"
-        aria-label="Accéder à l'espace restaurant"
-      ></a>
-    </article>
-
-    <article class="theme-card">
-      <div class="theme-card__informations">
-        <ul>
-          <li>
-            <img src="/images/Sydney/Brunch Sydney6.jpg" alt="" /><span></span>
-          </li>
-        </ul>
-        <span>Restaurant Musk 555 Avis Clients<br />Prix moyen 57&#8364</span>
-      </div>
-      <a
-        href="/#"
-        class="theme-card__button"
-        aria-label="Accéder à l'espace restaurant"
-      ></a>
-    </article> -->
-    <!-- </div> -->
   </section>
 </main>
