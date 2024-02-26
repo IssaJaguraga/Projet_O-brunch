@@ -9,7 +9,7 @@ import Rgpd from "./pages/Rgpd.svelte";
 import Restaurant from "./pages/Restaurant.svelte";
 
 export default {
-  "/": Home,
+  "/restaurant/:restaurantId": Restaurant,
   "/login": Login,
   "/register": Register,
   "/restaurants": AllRestaurant,
@@ -17,5 +17,5 @@ export default {
   "/about": About,
   "/rgpd": Rgpd,
   "/conditions": Conditions,
-  "/restaurant": Restaurant,
+  "/": Home,
 };

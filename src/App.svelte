@@ -8,6 +8,7 @@ import routes from "./routes";
 import { beforeUpdate } from "svelte";
 
 
+
 beforeUpdate(() => {
     $location === "/"
       ? document.body.classList.add("homepage")
@@ -19,6 +20,7 @@ beforeUpdate(() => {
 <div class="site-container">
   <Header />
   <Router {routes} />
+ 
 </div>
 
 <Footer />

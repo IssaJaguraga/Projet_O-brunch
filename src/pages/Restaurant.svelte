@@ -1,56 +1,71 @@
 <script>
     import Card from "../components/Card.svelte";
     import TitleSecondary from "../components/TitleSecondary.svelte";
-    
-    let Restaurant = [];
+    export let params;
 
-    const viewRestaurant = (restaurantId) => {
-        window.location.href = (`/restaurants/${restaurantId}`);
-    };
+    console.log(params);
 
-
-    const fetchRestaurantsFromTowns = async (restaurantId) => {
-        fetch(
-            `http://issajaguraga-server.eddi.cloud:8080/items/Restaurant?filter[Restaurant_id][_eq]=${restaurantId}`,
-        )
-            .then((response) => response.json())
-            .then((data) => {
-                Restaurant = data.data;
-            });
-    };
-
-    const fetchRestaurants = async () => {
+    export let restaurant = [];
+    const fetchRestaurant = async (id) => {
         const response = await fetch(
-            "http://issajaguraga-server.eddi.cloud:8080/items/Restaurant",
+            `http://issajaguraga-server.eddi.cloud:8080/items/Restaurant/${id}`,
         );
 
         if (response.ok) {
             const data = await response.json();
             console.log(data);
-            Restaurant = data.data;
+            restaurant = data.data;
         }
     };
 
-    const handleRestaurantSelected = (event) => {
-        const restaurantId = event.currentTarget.value;
-        fetchRestaurantsFromTowns(restaurantId);
-    };
+    fetchRestaurant(params.restaurantId);
 
-    fetchRestaurants();
+    
+    
+    
 </script>
 
 <main>
     <section class="home-restaurants">
-        <TitleSecondary title="Brunchs à Paris" />
-        <div class="card-list">
-            <Card
-                id={1}
-                note={4}
-                price={35}
-                title="Restaurant Paris"
-                image="/images/Paris/Brunch Paris1.jpg"
-                on:click={() => viewRestaurant(1)}
-            />
+        <TitleSecondary title={restaurant.name} />
+        <div class="restaurant-card__img-container">
+        <img
+        class="restaurant-card__img"
+            src={`http://issajaguraga-server.eddi.cloud:8080/assets/${restaurant.picture}`}
+            alt=""
+           
+        />
         </div>
+        <p>{restaurant.Adress}</p>
+
+        <p>
+            {restaurant.discription}
+        </p>
+        {#each Array(5) as _, index (index)}
+            {#if index < restaurant.rate}
+                <i class="fa fa-star yellow-star" aria-hidden="true"></i>
+            {:else}
+                <i class="fa fa-star-o yellow-star" aria-hidden="true"></i>
+            {/if}
+        {/each}
+        <!-- <img src="/icons/star/1.svg" alt="note" class="card__icon" / -->
+        <span class="card__price">Prix moyen {restaurant.price}€</span>
     </section>
+
+
+    
+
+  
+
+    <style>
+        .yellow-star{
+            color: gold;
+        }
+        .restaurant-card__img-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px; 
+        }
+    </style>
 </main>

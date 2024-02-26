@@ -3,16 +3,44 @@
   // on crée un tableau de données qui contient les données des espaces
   import Card from "../components/Card.svelte";
   import TitleSecondary from "../components/TitleSecondary.svelte";
+
+  export let restaurants = [];
+  const fetchRestaurants = async () => {
+    const response = await fetch(
+      "http://issajaguraga-server.eddi.cloud:8080/items/Restaurant",
+    );
+
+    if (response.ok) {
+      const data = await response.json();
+      console.log(data);
+      restaurants = data.data;
+    }
+  };
+
+  fetchRestaurants();
 </script>
 
 <main>
   <h1 class="featured-text">
-    Retrouvez ici les meilleurs restaurants pour bruncher, dans les plus grandes villes du monde.
+    Retrouvez ici les meilleurs restaurants pour bruncher, dans les plus grandes
+    villes du monde.
   </h1>
 
   <section class="restaurants" aria-label="Tous les restaurants">
-    <TitleSecondary title="Les meilleurs brunchs à Paris" />
+    <TitleSecondary title="Tous les restaurants" />
     <div class="card-list">
+      {#each restaurants as restaurant}
+        <Card
+          id={restaurant.id}
+          note={restaurant.note}
+          price={restaurant.price}
+          title={restaurant.name}
+          image={`http://issajaguraga-server.eddi.cloud:8080/assets/${restaurant.picture}`}
+        />
+      {/each}
+    </div>
+    <!-- <TitleSecondary title="Les meilleurs brunchs à Paris" /> -->
+    <!-- <div class="card-list">
       <Card
         id={1}
         note={4}
@@ -73,9 +101,9 @@
         title="Restaurant Marrakech"
         image="/images/Marrakech/Brunch Marrakech4.jpg"
       />
-    </div>
+    </div> -->
 
-      <!-- <div class="moi">
+    <!-- <div class="moi">
       <h2 class="title_restaurant">Les meuilleurs brunch de Dubaï</h2>
 
       <article class="theme-card">
