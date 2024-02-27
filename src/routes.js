@@ -11,6 +11,7 @@ export default {
   "/": Home,
   "/login": Login,
   "/register": Register,
+  "/restaurants/town/:townId": AllRestaurant,
   "/restaurants": AllRestaurant,
   "/history": History,
   "/about": About,
