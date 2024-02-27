@@ -1,5 +1,37 @@
 <script>
   import { link } from "svelte-spa-router";
+<<<<<<< Updated upstream
+=======
+  import user from "../store/userStore";
+
+  export let email = '';
+  export let password = '';
+
+  const login = async (e) => {
+    e.preventDefault();
+    const response = await fetch('http://issajaguraga-server.eddi.cloud:8080/auth/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        email,
+        password
+      })
+    });
+
+    if (response.ok) {
+      const data = await response.json();
+      console.log(data);
+      user.set({
+        token: data.data.access_token,
+        user: data.data.user
+    
+      });
+      console.log(user);
+    }
+  };
+>>>>>>> Stashed changes
 </script>
 
 
