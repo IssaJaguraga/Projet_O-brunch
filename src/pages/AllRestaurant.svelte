@@ -55,18 +55,23 @@
   </h1>
 
   <section class="restaurants" aria-label="Tous les restaurants">
-    <TitleSecondary title="Les meilleurs brunchs à Paris" />
+    
+    <TitleSecondary title="" />
 
     <div class="card-list">
       {#each restaurants as restaurant}
         <Card
           id={restaurant.id}
-          note={restaurant.note}
+          note={restaurant.rate}
           price={restaurant.price}
+        
           title={restaurant.name}
+         
           image={`http://issajaguraga-server.eddi.cloud:8080/assets/${restaurant.picture}`}
         />
       {/each}
+      
+
     </div>
   </section>
 </main>
