@@ -2,6 +2,37 @@
   import Card from "../components/Card.svelte";
   import TitleSecondary from "../components/TitleSecondary.svelte";
   import FilterForm from "../components/FilterForm.svelte";
+  import Button from "../components/Button.svelte";
+
+  export let continents = [];
+  export let countries = [];
+
+  
+
+  const fetchCountriesFromContinents = async (continentId) => {
+    fetch(`http://issajaguraga-server.eddi.cloud:8080/items/Country?filter[Continent_id][_eq]=${continentId}`)
+      .then(response => response.json())
+      .then(data => {
+        countries = data.data;
+      });
+  };
+
+  const fetchContinents = async () => {
+    const response = await fetch('http://issajaguraga-server.eddi.cloud:8080/items/Continent');
+
+    if (response.ok) {
+      const data = await response.json();
+      console.log(data);
+      continents = data.data;
+    }
+  };
+
+  const handleContinentSelected = (event) => {
+    const continentId = event.currentTarget.value;
+    fetchCountriesFromContinents(continentId);
+  };
+
+  fetchContinents();
 </script>
 
 <main>
@@ -27,6 +58,7 @@
   <section class="home-restaurants">
     <TitleSecondary title="Brunchs à Paris" />
     <div class="card-list">
+      
       <Card
         id={1}
         note={4}

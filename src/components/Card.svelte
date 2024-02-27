@@ -1,4 +1,5 @@
 <script>
+  import { link } from "svelte-spa-router";
   // on crée des propriétés pour pouvoir utiliser
   // notre composant avec différentes données
   // (= les données propres à chaque espace)
@@ -6,7 +7,7 @@
 </script>
 
 <article class="card">
-  <a href="/restaurant/{id}">
+  <a href="/restaurant/{id}" use:link>
     <div class="card__informations">
       <div class="card__img-container">
         <img class="card__img" src={image} alt="" />

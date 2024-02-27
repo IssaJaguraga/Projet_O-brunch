@@ -64,7 +64,6 @@
           id={restaurant.id}
           note={restaurant.rate}
           price={restaurant.price}
-        
           title={restaurant.name}
          
           image={`http://issajaguraga-server.eddi.cloud:8080/assets/${restaurant.picture}`}
