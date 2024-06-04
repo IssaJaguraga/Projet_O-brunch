@@ -1,0 +1,101 @@
+@use "../utils/variables" as *;
+
+$gap: 2rem;
+$columns: 4;
+$columns-desktop: 3;
+$columns-tablet: 2;
+$columns-mobile: 1;
+
+.card {
+  border-radius: 1rem;
+  overflow: hidden;
+  position: relative;
+
+  a {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+
+    .card__img {
+      transition: 0.3s ease-in-out;
+    }
+
+    &:hover {
+      .card__img {
+        transform: scale(1.05);
+        opacity: 0.8;
+      }
+    }
+  }
+
+  &__img-container {
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    display: inline-block;
+    object-fit: cover;
+  }
+
+  &__description {
+    color: $black-color;
+  }
+
+  &__description {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .card__price {
+      display: block;
+      width: 100%;
+      margin-top: 0.5rem;
+      color: grey;
+    }
+  }
+
+  &__note {
+    color: $yellow-color;
+
+    i {
+      margin: 0 0.2rem;
+    }
+  }
+}
+
+
+.card-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $gap;
+  margin-bottom: 2rem;
+
+  .card {
+    width: calc((100% / $columns) - $gap + ($gap / $columns));
+  }
+
+  @media screen and (max-width: 962px) {
+    .card {
+      width: calc((100% / $columns-desktop) - $gap + ($gap / $columns-desktop));
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .card {
+      width: calc((100% / $columns-tablet) - $gap + ($gap / $columns-tablet));
+    }
+  }
+
+  @media screen and (max-width: 576px) {
+    .card {
+      width: calc((100% / $columns-mobile) - $gap + ($gap / $columns-mobile));
+    }
+  }
+}

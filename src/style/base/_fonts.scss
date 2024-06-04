@@ -1,0 +1,13 @@
+/* -- Fonts -- */
+@font-face {
+  font-family: "OpenSans";
+  src:
+    local("OpenSans"),
+    url("/public/fonts/OpenSans-Italic-VariableFont_wdth\,wght.ttf") format("TrueType"),
+    url("/public/fonts/OpenSans-VariableFont_wdth\,wght.ttf") format("TrueType");
+  /* 
+        On ajoute font-display pour que la police soit toujours visible lors du chargement de page
+        lien : https://developer.chrome.com/docs/lighthouse/performance/font-display/
+      */
+  font-display: swap;
+}

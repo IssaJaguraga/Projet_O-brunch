@@ -1,0 +1,81 @@
+@use "../utils/variables" as *;
+@use "../utils/mixins";
+
+/* -- Header -- */
+.main-footer {
+  background-color: $primary;
+  width: 100%;
+  color: $white-color;
+  text-align: center;
+  padding: 2rem;
+
+  ul {
+    padding-left: 0;
+  }
+
+  .footer-link-logo {
+    text-align: center;
+    display: inline-block;
+    width: 150px;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  #footer-menu {
+    padding-left: 0;
+  }
+
+  li {
+    list-style-type: none;
+  }
+
+  .footer-menu__item-link {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    font-size: 1.4rem;
+    transition: transform 0.2s;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  .socials-list {
+    display: flex;
+    justify-content: center;
+    margin-top: 4rem;
+
+    li {
+      margin: 0 1rem;
+    }
+
+    .fa {
+      font-size: 2.5rem;
+      transition: all 0.3s ease-in-out;
+      font-weight: bold;
+    }
+
+    .fa-facebook {
+      color: #3b5998;
+    }
+
+    .fa-twitter {
+      color: #00aced;
+    }
+
+    .fa-instagram {
+      color: #E1306C;
+    }
+  }
+
+  .footer-copyright {
+    margin-top: 4rem;
+    font-size: 1.2rem;
+  }
+}

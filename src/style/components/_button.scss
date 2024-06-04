@@ -1,0 +1,30 @@
+@use "../utils/variables" as *;
+
+button {
+  margin-top: 0px;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: $primary-light;
+  border: 2px solid $primary-light;
+  cursor: pointer;
+  font-weight: bold;
+
+  &:hover {
+      background-color: transparent;
+      border-color: $primary-light;
+      color: $white-color;
+  }
+
+  &.variant-hover-black {
+    &:hover {
+      color: $black-color;
+    }
+  }
+
+  &[disabled] {
+    background-color: #ccc;
+    border-color: #ccc;
+    color: $white-color;
+    cursor: not-allowed;
+  }
+}    
